@@ -47,6 +47,11 @@
 		9AD6CC5D2957E3880091BBC9 /* BreedListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC5C2957E3880091BBC9 /* BreedListLoader.swift */; };
 		9AD6CC602957E3F90091BBC9 /* BreedListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC5F2957E3F90091BBC9 /* BreedListResult.swift */; };
 		9AD6CC622957E80C0091BBC9 /* BreedListModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC612957E80C0091BBC9 /* BreedListModelViewModel.swift */; };
+		9AD6CC672957EA550091BBC9 /* BreedListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC662957EA550091BBC9 /* BreedListCollectionViewController.swift */; };
+		9AD6CC692957EB770091BBC9 /* BreedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC682957EB770091BBC9 /* BreedListCell.swift */; };
+		9AD6CC6B2957F3D30091BBC9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */; };
+		9AD6CC6D2957F3F10091BBC9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */; };
+		9AD6CC6F2957F4280091BBC9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +116,11 @@
 		9AD6CC5C2957E3880091BBC9 /* BreedListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListLoader.swift; sourceTree = "<group>"; };
 		9AD6CC5F2957E3F90091BBC9 /* BreedListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListResult.swift; sourceTree = "<group>"; };
 		9AD6CC612957E80C0091BBC9 /* BreedListModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListModelViewModel.swift; sourceTree = "<group>"; };
+		9AD6CC662957EA550091BBC9 /* BreedListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCollectionViewController.swift; sourceTree = "<group>"; };
+		9AD6CC682957EB770091BBC9 /* BreedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCell.swift; sourceTree = "<group>"; };
+		9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +233,9 @@
 		9A72E8F62957CA4600A30BC0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */,
+				9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */,
+				9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */,
 				9A72E9002957CB6800A30BC0 /* NavigationBar.swift */,
 				9A72E9022957CB8E00A30BC0 /* NavigationBarAppearance.swift */,
 				9A72E8FE2957CB3D00A30BC0 /* NavigationController.swift */,
@@ -254,11 +267,9 @@
 		9A72E9072957CF6400A30BC0 /* Breed List */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6CC642957E9EA0091BBC9 /* Controllers */,
+				9AD6CC632957E9E40091BBC9 /* Collection View */,
 				9AD6CC5E2957E3AB0091BBC9 /* Model */,
-				9A72E90A2957CF8700A30BC0 /* BreedListCoordinator.swift */,
-				9A72E9102957CFA600A30BC0 /* BreedListViewController.swift */,
-				9A72E9122957CFAB00A30BC0 /* BreedListViewModel.swift */,
-				9AD6CC5C2957E3880091BBC9 /* BreedListLoader.swift */,
 			);
 			path = "Breed List";
 			sourceTree = "<group>";
@@ -350,10 +361,30 @@
 		9AD6CC5E2957E3AB0091BBC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9AD6CC5F2957E3F90091BBC9 /* BreedListResult.swift */,
 				9AD6CC612957E80C0091BBC9 /* BreedListModelViewModel.swift */,
+				9AD6CC5F2957E3F90091BBC9 /* BreedListResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9AD6CC632957E9E40091BBC9 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6CC662957EA550091BBC9 /* BreedListCollectionViewController.swift */,
+				9AD6CC682957EB770091BBC9 /* BreedListCell.swift */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		9AD6CC642957E9EA0091BBC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A72E90A2957CF8700A30BC0 /* BreedListCoordinator.swift */,
+				9AD6CC5C2957E3880091BBC9 /* BreedListLoader.swift */,
+				9A72E9102957CFA600A30BC0 /* BreedListViewController.swift */,
+				9A72E9122957CFAB00A30BC0 /* BreedListViewModel.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,14 +525,18 @@
 				9AD6CC622957E80C0091BBC9 /* BreedListModelViewModel.swift in Sources */,
 				9A72E90D2957CF9100A30BC0 /* BreedPicturesCoordinator.swift in Sources */,
 				9A72E8F52957CA2E00A30BC0 /* AppCoordinator.swift in Sources */,
+				9AD6CC692957EB770091BBC9 /* BreedListCell.swift in Sources */,
 				9AD6CC582957E09A0091BBC9 /* Endpoint.swift in Sources */,
+				9AD6CC6F2957F4280091BBC9 /* CollectionViewCell.swift in Sources */,
 				9A72E8F32957C8C000A30BC0 /* ViewController.swift in Sources */,
 				9A72E91D2957D13D00A30BC0 /* FavoritePicturesViewModel.swift in Sources */,
+				9AD6CC6B2957F3D30091BBC9 /* CollectionViewController.swift in Sources */,
 				9A72E9152957D00600A30BC0 /* ViewControllerRepresentable.swift in Sources */,
 				9A72E8F92957CA5700A30BC0 /* Coordinator.swift in Sources */,
 				9A72E9012957CB6800A30BC0 /* NavigationBar.swift in Sources */,
 				9AD6CC4B2957E01B0091BBC9 /* NetworkEngine.swift in Sources */,
 				9A72E9052957CC0900A30BC0 /* TabBarCoordinator.swift in Sources */,
+				9AD6CC6D2957F3F10091BBC9 /* CollectionView.swift in Sources */,
 				9AD6CC492957E00A0091BBC9 /* HTTPHeader.swift in Sources */,
 				9A72E9112957CFA600A30BC0 /* BreedListViewController.swift in Sources */,
 				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
@@ -521,6 +556,7 @@
 				9A72E9032957CB8E00A30BC0 /* NavigationBarAppearance.swift in Sources */,
 				9A72E9192957D0E000A30BC0 /* BreedPicturesViewModel.swift in Sources */,
 				9AD6CC5D2957E3880091BBC9 /* BreedListLoader.swift in Sources */,
+				9AD6CC672957EA550091BBC9 /* BreedListCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

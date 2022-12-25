@@ -9,9 +9,23 @@ import Foundation
 
 typealias BreedList = [String: [String]]
 
-struct BreedListModelViewModel {
+struct BreedListModelViewModel: Hashable {
 
     // MARK: Properties
 
-    let breeds: BreedList
+    let uuid: UUID = .init()
+    let name: String
+    let subBreeds: [String]
+
+    // MARK: Hashable
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+
+    // MARK: Equatable
+
+    static func == (lhs: BreedListModelViewModel, rhs: BreedListModelViewModel) -> Bool {
+        lhs.uuid == rhs.uuid
+    }
 }

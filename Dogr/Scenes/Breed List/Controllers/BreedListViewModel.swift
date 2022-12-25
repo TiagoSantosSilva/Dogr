@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BreedListViewModelable: AnyObject {
-    var breeds: BreedList { get }
+    var breeds: [BreedListModelViewModel] { get }
     func loadBreeds(completion: @escaping (ViewModelLoadResult) -> Void)
 }
 
@@ -21,7 +21,7 @@ final class BreedListViewModel: BreedListViewModelable {
 
     // MARK: Properties
 
-    private(set) var breeds: BreedList = .init()
+    private(set) var breeds: [BreedListModelViewModel] = []
     private let loader: BreedListLoadable
 
     // MARK: Initialization
@@ -36,7 +36,9 @@ final class BreedListViewModel: BreedListViewModelable {
         Task {
             do {
                 let result = try await loader.loadBreeds()
-                self.breeds = BreedListModelViewModel(breeds: result.message).breeds
+                self.breeds = result.message.map {
+                    .init(name: $0.key, subBreeds: $0.value)
+                }
 
                 completion(.success)
             } catch {
