@@ -31,5 +31,16 @@ final class BreedListCoordinator: Coordinator, ViewControllerRepresentable {
         let navigationController = NavigationController(rootViewController: viewController)
 
         self.navigator = Navigator(dependencies: dependencies, navigationController: navigationController)
+        super.init()
+        
+        viewController.delegate = self
+    }
+}
+
+// MARK: - BreedListViewControllerDelegate
+
+extension BreedListCoordinator: BreedListViewControllerDelegate {
+    func viewController(_ viewController: BreedListViewController, didSelect breed: BreedListModelViewModel) {
+        print("🫡")
     }
 }

@@ -52,6 +52,15 @@
 		9AD6CC6B2957F3D30091BBC9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */; };
 		9AD6CC6D2957F3F10091BBC9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */; };
 		9AD6CC6F2957F4280091BBC9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */; };
+		9AD6CC712957F93F0091BBC9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC702957F93F0091BBC9 /* UIView.swift */; };
+		9AD6CC732957FAA90091BBC9 /* CellRegistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC722957FAA90091BBC9 /* CellRegistable.swift */; };
+		9AD6CC752957FAC10091BBC9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC742957FAC10091BBC9 /* Identifiable.swift */; };
+		9AD6CC772957FAF80091BBC9 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC762957FAF80091BBC9 /* UICollectionView.swift */; };
+		9AD6CC792957FB070091BBC9 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC782957FB070091BBC9 /* UICollectionViewCell.swift */; };
+		9AD6CC7B2957FB1E0091BBC9 /* CellDequeuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC7A2957FB1E0091BBC9 /* CellDequeuable.swift */; };
+		9AD6CC7D2957FB430091BBC9 /* StringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC7C2957FB430091BBC9 /* StringError.swift */; };
+		9AD6CC7F2957FC480091BBC9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC7E2957FC480091BBC9 /* UIViewController.swift */; };
+		9AD6CC812957FDC70091BBC9 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC802957FDC70091BBC9 /* CATransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +130,15 @@
 		9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9AD6CC702957F93F0091BBC9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		9AD6CC722957FAA90091BBC9 /* CellRegistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRegistable.swift; sourceTree = "<group>"; };
+		9AD6CC742957FAC10091BBC9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		9AD6CC762957FAF80091BBC9 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		9AD6CC782957FB070091BBC9 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		9AD6CC7A2957FB1E0091BBC9 /* CellDequeuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDequeuable.swift; sourceTree = "<group>"; };
+		9AD6CC7C2957FB430091BBC9 /* StringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringError.swift; sourceTree = "<group>"; };
+		9AD6CC7E2957FC480091BBC9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		9AD6CC802957FDC70091BBC9 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +266,10 @@
 		9A72E8F72957CA4D00A30BC0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6CC7A2957FB1E0091BBC9 /* CellDequeuable.swift */,
+				9AD6CC722957FAA90091BBC9 /* CellRegistable.swift */,
 				9A72E8F82957CA5700A30BC0 /* Coordinator.swift */,
+				9AD6CC742957FAC10091BBC9 /* Identifiable.swift */,
 				9A72E9142957D00600A30BC0 /* ViewControllerRepresentable.swift */,
 			);
 			path = Protocols;
@@ -298,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				9A72E91F2957D2A800A30BC0 /* Localizable.swift */,
+				9AD6CC7C2957FB430091BBC9 /* StringError.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -305,7 +327,12 @@
 		9A72E9212957D35900A30BC0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6CC802957FDC70091BBC9 /* CATransition.swift */,
+				9AD6CC762957FAF80091BBC9 /* UICollectionView.swift */,
+				9AD6CC782957FB070091BBC9 /* UICollectionViewCell.swift */,
 				9A72E9222957D36500A30BC0 /* UIImage+System.swift */,
+				9AD6CC702957F93F0091BBC9 /* UIView.swift */,
+				9AD6CC7E2957FC480091BBC9 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,8 +555,14 @@
 				9AD6CC692957EB770091BBC9 /* BreedListCell.swift in Sources */,
 				9AD6CC582957E09A0091BBC9 /* Endpoint.swift in Sources */,
 				9AD6CC6F2957F4280091BBC9 /* CollectionViewCell.swift in Sources */,
+				9AD6CC812957FDC70091BBC9 /* CATransition.swift in Sources */,
+				9AD6CC7D2957FB430091BBC9 /* StringError.swift in Sources */,
+				9AD6CC712957F93F0091BBC9 /* UIView.swift in Sources */,
 				9A72E8F32957C8C000A30BC0 /* ViewController.swift in Sources */,
+				9AD6CC7F2957FC480091BBC9 /* UIViewController.swift in Sources */,
+				9AD6CC732957FAA90091BBC9 /* CellRegistable.swift in Sources */,
 				9A72E91D2957D13D00A30BC0 /* FavoritePicturesViewModel.swift in Sources */,
+				9AD6CC752957FAC10091BBC9 /* Identifiable.swift in Sources */,
 				9AD6CC6B2957F3D30091BBC9 /* CollectionViewController.swift in Sources */,
 				9A72E9152957D00600A30BC0 /* ViewControllerRepresentable.swift in Sources */,
 				9A72E8F92957CA5700A30BC0 /* Coordinator.swift in Sources */,
@@ -546,6 +579,7 @@
 				9A72E9232957D36500A30BC0 /* UIImage+System.swift in Sources */,
 				9AD6CC4F2957E03F0091BBC9 /* NetworkResponseParser.swift in Sources */,
 				9AD6CC602957E3F90091BBC9 /* BreedListResult.swift in Sources */,
+				9AD6CC792957FB070091BBC9 /* UICollectionViewCell.swift in Sources */,
 				9A72E90F2957CF9A00A30BC0 /* FavoritePicturesCoordinator.swift in Sources */,
 				9AD6CC552957E0720091BBC9 /* URLScheme.swift in Sources */,
 				9A72E8BE2957C1EF00A30BC0 /* AppDelegate.swift in Sources */,
@@ -553,9 +587,11 @@
 				9A72E9132957CFAB00A30BC0 /* BreedListViewModel.swift in Sources */,
 				9A72E8FB2957CAAD00A30BC0 /* Navigator.swift in Sources */,
 				9A72E91B2957D13800A30BC0 /* FavoritePicturesViewController.swift in Sources */,
+				9AD6CC7B2957FB1E0091BBC9 /* CellDequeuable.swift in Sources */,
 				9A72E9032957CB8E00A30BC0 /* NavigationBarAppearance.swift in Sources */,
 				9A72E9192957D0E000A30BC0 /* BreedPicturesViewModel.swift in Sources */,
 				9AD6CC5D2957E3880091BBC9 /* BreedListLoader.swift in Sources */,
+				9AD6CC772957FAF80091BBC9 /* UICollectionView.swift in Sources */,
 				9AD6CC672957EA550091BBC9 /* BreedListCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
