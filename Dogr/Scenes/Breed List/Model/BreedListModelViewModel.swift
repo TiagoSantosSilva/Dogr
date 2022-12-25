@@ -17,6 +17,13 @@ struct BreedListModelViewModel: Hashable {
     let name: String
     let subBreeds: [String]
 
+    // MARK: Initialization
+
+    init(name: String, subBreeds: [String]) {
+        self.name = name.capitalized
+        self.subBreeds = subBreeds
+    }
+    
     // MARK: Hashable
 
     func hash(into hasher: inout Hasher) {

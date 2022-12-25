@@ -38,6 +38,8 @@ final class BreedListViewModel: BreedListViewModelable {
                 let result = try await loader.loadBreeds()
                 self.breeds = result.message.map {
                     .init(name: $0.key, subBreeds: $0.value)
+                }.sorted {
+                    $0.name < $1.name
                 }
 
                 completion(.success)

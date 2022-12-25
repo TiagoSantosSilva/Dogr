@@ -29,7 +29,6 @@ final class BreedListViewController: ViewController {
         self.collectionViewController.delegate = self
 
         setupNavigationBar()
-        view.backgroundColor = .systemBlue
     }
 
     // MARK: Life Cycle
