@@ -46,7 +46,7 @@ final class BreedListCell: CollectionViewCell {
 
         nameLabel.textColor = .label
         nameLabel.textAlignment = .left
-        nameLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        nameLabel.font = Style.NameLabel.font
     }
 
     private func setupConstraints() {
@@ -68,6 +68,12 @@ private extension BreedListCell {
     enum Constraints {
         enum NameLabel {
             static let padding: CGFloat = 8
+        }
+    }
+
+    enum Style {
+        enum NameLabel {
+            static let font: UIFont = .systemFont(ofSize: 14, weight: .medium)
         }
     }
 

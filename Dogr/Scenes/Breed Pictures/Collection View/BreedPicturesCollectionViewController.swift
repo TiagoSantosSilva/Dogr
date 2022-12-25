@@ -35,20 +35,7 @@ final class BreedPicturesCollectionViewController: CollectionViewController {
     // MARK: Initialization
 
     override init() {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2),
-                                              heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(padding: 4)
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalWidth(1/2))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       subitems: [item])
-        let layoutSection = NSCollectionLayoutSection(group: group)
-        layoutSection.contentInsets = NSDirectionalEdgeInsets(padding: 4)
-
-        let layout = UICollectionViewCompositionalLayout(section: layoutSection)
-
+        let layout = BreedPicturesCollectionViewLayout()
         let collectionView = CollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(collectionViewLayout: layout)
         self.dataSource = DataSource(collectionView: collectionView, cellProvider: Self.cellProvider(delegate: self))
@@ -105,5 +92,7 @@ extension BreedPicturesCollectionViewController {
 // MARK: - BreedPictureCellDelegate
 
 extension BreedPicturesCollectionViewController: BreedPictureCellDelegate {
-
+    func cell(_ cell: BreedPictureCell, didTapLikeButtonFor viewModel: BreedPictureModelViewModel) {
+        print("TO DO")
+    }
 }

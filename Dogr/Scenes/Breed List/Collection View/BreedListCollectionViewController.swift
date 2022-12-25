@@ -34,18 +34,7 @@ final class BreedListCollectionViewController: CollectionViewController {
     // MARK: Initialization
 
     override init() {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(horizontal: 16, vertical: 8)
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(100))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
-                                                     subitems: [item])
-        let layoutSection = NSCollectionLayoutSection(group: group)
-        let layout = UICollectionViewCompositionalLayout(section: layoutSection)
-
+        let layout = BreedListCollectionViewLayout()
         let collectionView = CollectionView(frame: .zero, collectionViewLayout: layout)
         self.dataSource = DataSource(collectionView: collectionView, cellProvider: Self.cellProvider)
         super.init(collectionViewLayout: layout)

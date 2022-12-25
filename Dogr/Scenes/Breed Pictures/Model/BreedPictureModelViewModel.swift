@@ -14,6 +14,7 @@ final class BreedPictureModelViewModel: Hashable {
     let uuid: UUID = .init()
     var url: String
     var image: UIImage?
+    var isLiked: Bool = false
 
     // MARK: Initialization
 

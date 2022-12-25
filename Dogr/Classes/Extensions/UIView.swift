@@ -19,4 +19,8 @@ extension UIView {
         clipsToBounds = true
         layer.cornerRadius = 8
     }
+
+    func transitionCrossDissolve(duration: TimeInterval = 0.3, animations: @escaping () -> Void) {
+        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: animations)
+    }
 }
