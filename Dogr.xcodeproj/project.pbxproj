@@ -43,6 +43,7 @@
 		9AD6CC532957E0600091BBC9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC522957E0600091BBC9 /* NetworkError.swift */; };
 		9AD6CC552957E0720091BBC9 /* URLScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC542957E0720091BBC9 /* URLScheme.swift */; };
 		9AD6CC582957E09A0091BBC9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC572957E09A0091BBC9 /* Endpoint.swift */; };
+		9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC5A2957E1BA0091BBC9 /* BreedEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		9AD6CC522957E0600091BBC9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9AD6CC542957E0720091BBC9 /* URLScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLScheme.swift; sourceTree = "<group>"; };
 		9AD6CC572957E09A0091BBC9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		9AD6CC5A2957E1BA0091BBC9 /* BreedEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				9AD6CC462957DFF40091BBC9 /* Classes */,
+				9AD6CC592957E1AA0091BBC9 /* Endpoints */,
 				9AD6CC472957DFFB0091BBC9 /* Enumerations */,
 				9AD6CC562957E0920091BBC9 /* Protocols */,
 			);
@@ -326,6 +329,14 @@
 				9AD6CC572957E09A0091BBC9 /* Endpoint.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9AD6CC592957E1AA0091BBC9 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6CC5A2957E1BA0091BBC9 /* BreedEndpoint.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +486,7 @@
 				9A72E9052957CC0900A30BC0 /* TabBarCoordinator.swift in Sources */,
 				9AD6CC492957E00A0091BBC9 /* HTTPHeader.swift in Sources */,
 				9A72E9112957CFA600A30BC0 /* BreedListViewController.swift in Sources */,
+				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
 				9A72E90B2957CF8700A30BC0 /* BreedListCoordinator.swift in Sources */,
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
 				9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */,
