@@ -45,12 +45,7 @@ final class NetworkResponseParser: NetworkResponseParseable {
     // MARK: - Private Functions
 
     private func isResponseSuccessful(_ response: HTTPURLResponse) -> Bool {
-        switch response.statusCode {
-        case ResponseCodes.successful:
-            return true
-        default:
-            return false
-        }
+        ResponseCodes.successful.contains(response.statusCode)
     }
 }
 

@@ -24,7 +24,7 @@ extension BreedEndpoint {
     var endpoint: String {
         switch self {
         case .list:
-            return "list/all"
+            return "breeds/list/all"
         case let .pictures(breed):
             return "breed/\(breed)/images"
         }

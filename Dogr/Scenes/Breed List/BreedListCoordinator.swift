@@ -25,7 +25,9 @@ final class BreedListCoordinator: Coordinator, ViewControllerRepresentable {
     init(dependencies: DependencyContainable) {
         self.dependencies = dependencies
 
-        let viewController = BreedListViewController()
+        let loader = BreedListLoader(dependencies: dependencies)
+        let viewModel = BreedListViewModel(loader: loader)
+        let viewController = BreedListViewController(viewModel: viewModel)
         let navigationController = NavigationController(rootViewController: viewController)
 
         self.navigator = Navigator(dependencies: dependencies, navigationController: navigationController)
