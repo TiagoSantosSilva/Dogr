@@ -8,12 +8,24 @@
 import Foundation
 
 protocol NetworkRequestBuildable {
+    func buildRequest(for url: String) throws -> URLRequest
     func buildRequest(for endpoint: Endpoint) throws -> URLRequest
 }
 
 struct NetworkRequestBuilder: NetworkRequestBuildable {
 
     // MARK: - Functions
+
+    func buildRequest(for url: String) throws -> URLRequest {
+        guard let url = URL(string: url) else {
+            throw NetworkError.urlBuildFail
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+
+        return request
+    }
 
     func buildRequest(for endpoint: Endpoint) throws -> URLRequest {
         var components = URLComponents()

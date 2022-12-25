@@ -11,22 +11,6 @@ protocol BreedListCollectionViewControllerDelegate: AnyObject {
     func collectionViewController(_ collectionViewController: BreedListCollectionViewController, didSelectItemAt indexPath: IndexPath)
 }
 
-extension NSDirectionalEdgeInsets {
-    init(padding: CGFloat) {
-        self.init(top: padding,
-                  leading: padding,
-                  bottom: padding,
-                  trailing: padding)
-    }
-
-    init(horizontal: CGFloat, vertical: CGFloat) {
-        self.init(top: vertical,
-                  leading: horizontal,
-                  bottom: vertical,
-                  trailing: horizontal)
-    }
-}
-
 final class BreedListCollectionViewController: CollectionViewController {
 
     // MARK: Enum
@@ -56,7 +40,7 @@ final class BreedListCollectionViewController: CollectionViewController {
         item.contentInsets = NSDirectionalEdgeInsets(horizontal: 16, vertical: 8)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(80))
+                                               heightDimension: .absolute(100))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitems: [item])
         let layoutSection = NSCollectionLayoutSection(group: group)

@@ -30,7 +30,7 @@ final class BreedListCell: CollectionViewCell {
     // MARK: Configuration
 
     func configure(with viewModel: BreedListModelViewModel) {
-        nameLabel.text = viewModel.name
+        nameLabel.text = viewModel.displayName
     }
 
     // MARK: Setups
@@ -46,7 +46,7 @@ final class BreedListCell: CollectionViewCell {
 
         nameLabel.textColor = .label
         nameLabel.textAlignment = .left
-        nameLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        nameLabel.font = .systemFont(ofSize: 14, weight: .medium)
     }
 
     private func setupConstraints() {

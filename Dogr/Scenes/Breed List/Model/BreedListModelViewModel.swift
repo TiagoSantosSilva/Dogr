@@ -14,13 +14,15 @@ struct BreedListModelViewModel: Hashable {
     // MARK: Properties
 
     let uuid: UUID = .init()
+    let displayName: String
     let name: String
     let subBreeds: [String]
 
     // MARK: Initialization
 
     init(name: String, subBreeds: [String]) {
-        self.name = name.capitalized
+        self.name = name
+        self.displayName = name.capitalized
         self.subBreeds = subBreeds
     }
     

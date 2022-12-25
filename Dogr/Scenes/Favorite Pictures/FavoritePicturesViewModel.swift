@@ -9,4 +9,4 @@ import Foundation
 
 protocol FavoritePicturesViewModelable: AnyObject {}
 
-final class FavoritePicturesViewModel: BreedPicturesViewModelable {}
+final class FavoritePicturesViewModel: FavoritePicturesViewModelable {}

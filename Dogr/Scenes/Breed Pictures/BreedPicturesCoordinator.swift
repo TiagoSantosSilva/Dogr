@@ -7,27 +7,38 @@
 
 import UIKit
 
-final class BreedPicturesCoordinator: Coordinator, ViewControllerRepresentable {
-
-    // MARK: Properties
-
-    var viewController: UIViewController {
-        navigator.navigationController
-    }
+final class BreedPicturesCoordinator: Coordinator {
 
     // MARK: Private Properties
 
     private let dependencies: DependencyContainable
     private let navigator: Navigatable
+    private let breed: BreedListModelViewModel
 
     // MARK: Initialization
 
-    init(dependencies: DependencyContainable) {
+    init(dependencies: DependencyContainable, navigator: Navigatable, breed: BreedListModelViewModel) {
         self.dependencies = dependencies
+        self.navigator = navigator
+        self.breed = breed
+    }
 
-        let viewController = BreedPicturesViewController()
-        let navigationController = NavigationController(rootViewController: viewController)
+    // MARK: Functions
 
-        self.navigator = Navigator(dependencies: dependencies, navigationController: navigationController)
+    func start() {
+        let loader = BreedPicturesLoader(dependencies: dependencies, breed: breed)
+        let viewModel = BreedPicturesViewModel(breed: breed, loader: loader)
+        let viewController = BreedPicturesViewController(viewModel: viewModel)
+        viewController.delegate = self
+
+        navigator.transition(to: viewController, as: .push)
+    }
+}
+
+// MARK: - BreedPicturesViewControllerDelegate
+
+extension BreedPicturesCoordinator: BreedPicturesViewControllerDelegate {
+    func viewControllerDidPop(_ viewController: BreedPicturesViewController) {
+        end()
     }
 }

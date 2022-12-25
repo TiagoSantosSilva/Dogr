@@ -41,6 +41,6 @@ final class BreedListCoordinator: Coordinator, ViewControllerRepresentable {
 
 extension BreedListCoordinator: BreedListViewControllerDelegate {
     func viewController(_ viewController: BreedListViewController, didSelect breed: BreedListModelViewModel) {
-        print("🫡")
+        initiate(coordinator: BreedPicturesCoordinator(dependencies: dependencies, navigator: navigator, breed: breed))
     }
 }
