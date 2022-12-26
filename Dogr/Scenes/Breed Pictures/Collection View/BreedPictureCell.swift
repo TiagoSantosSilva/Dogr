@@ -84,7 +84,7 @@ final class BreedPictureCell: ImageCell {
 private extension BreedPictureCell {
     final class BreedPictureCellFavoriteButton: UIButton {
 
-        // MARK:
+        // MARK: Initialization
 
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -95,7 +95,7 @@ private extension BreedPictureCell {
             nil
         }
 
-        // MARK:
+        // MARK: Configuration
 
         func configure(isFavorite: Bool) {
             transitionCrossDissolve {
@@ -108,6 +108,8 @@ private extension BreedPictureCell {
         }
     }
 
+    // MARK: Constants
+    
     enum FavoriteButtonImage {
         static let favorite = UIImage(named: "heart-filled")
         static let notFavorite = UIImage(named: "heart-empty")
