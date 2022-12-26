@@ -22,11 +22,12 @@ final class FavoritePicturesCollectionViewController: CollectionViewController {
     // MARK: Initialization
 
     override init() {
-        let layout = BreedPicturesCollectionViewLayout()
+        let layout = FavoritePicturesCollectionViewLayout()
         let collectionView = CollectionView(frame: .zero, collectionViewLayout: layout)
         self.dataSource = DataSource(collectionView: collectionView, cellProvider: Self.cellProvider)
         super.init(collectionViewLayout: layout)
         self.collectionView = collectionView
+        setup()
     }
 
     // MARK: Functions
@@ -44,6 +45,20 @@ final class FavoritePicturesCollectionViewController: CollectionViewController {
     }
 
     // MARK: Setups
+
+    private func setup() {
+        let kind = FavoritePicturesCollectionViewLayout.ElementKinds.header
+        let headerRegistration = UICollectionView.SupplementaryRegistration<FavoritePictureHeader>(elementKind: kind) { [unowned self] header, _, indexPath in
+            let group = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            header.configure(with: group)
+        }
+
+        self.dataSource.supplementaryViewProvider = { [unowned self] _, _, index in
+            self.collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
+        }
+    }
+
+    // MARK: Cell Provider
 
     private static var cellProvider: ((UICollectionView, IndexPath, BreedPictureModel) -> UICollectionViewCell?) {
         let cellRegistration = CellRegistration { cell, _, cellViewModel in
