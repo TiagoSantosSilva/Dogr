@@ -13,14 +13,14 @@ final class BreedPictureModel: Hashable {
 
     let uuid: UUID = .init()
     let url: String
-    let breed: String
+    let name: String
     let image: UIImage?
 
     // MARK: Initialization
 
     init(url: String, breed: String, image: UIImage?) {
         self.url = url
-        self.breed = breed
+        self.name = breed
         self.image = image
     }
 

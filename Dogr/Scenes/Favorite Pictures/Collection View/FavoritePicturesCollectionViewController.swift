@@ -9,17 +9,11 @@ import UIKit
 
 final class FavoritePicturesCollectionViewController: CollectionViewController {
 
-    // MARK: Enumerations
-
-    private enum Section {
-        case main
-    }
-
     // MARK: Typealiases
 
     private typealias CellRegistration = UICollectionView.CellRegistration<FavoritePicturesCell, BreedPictureModel>
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, BreedPictureModel>
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, BreedPictureModel>
+    private typealias DataSource = UICollectionViewDiffableDataSource<BreedPictureGroupModel, BreedPictureModel>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<BreedPictureGroupModel, BreedPictureModel>
 
     // MARK: Properties
 
@@ -37,11 +31,13 @@ final class FavoritePicturesCollectionViewController: CollectionViewController {
 
     // MARK: Functions
 
-    @MainActor func update(with images: [BreedPictureModel]) {
+    @MainActor func update(with groups: [BreedPictureGroupModel]) {
         Task {
             var snapshot = Snapshot()
-            snapshot.appendSections([.main])
-            snapshot.appendItems(images)
+            snapshot.appendSections(groups)
+            groups.enumerated().forEach {
+                snapshot.appendItems($0.element.pictures, toSection: $0.element)
+            }
             collectionView.layer.add(CATransition.fade, forKey: nil)
             await dataSource.apply(snapshot, animatingDifferences: false)
         }
