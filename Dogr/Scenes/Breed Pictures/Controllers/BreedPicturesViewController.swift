@@ -79,4 +79,8 @@ extension BreedPicturesViewController: BreedPicturesCollectionViewControllerDele
             }
         }
     }
+
+    func collectionViewController(_ collectionViewController: BreedPicturesCollectionViewController, didFavoriteButtonFor viewModel: BreedPictureModelViewModel) {
+        self.viewModel.changeFavoriteStatus(of: viewModel)
+    }
 }

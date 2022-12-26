@@ -12,6 +12,7 @@ protocol BreedPicturesViewModelable: AnyObject {
     var title: String { get }
     var images: CurrentValueSubject<[BreedPictureModelViewModel], Error> { get }
 
+    func changeFavoriteStatus(of viewModel: BreedPictureModelViewModel)
     func cancel(indexPath: IndexPath)
     func loadImage(for indexPath: IndexPath, completion: @escaping (Result<UIImage?, BreedPicturesViewModelError>) -> Void)
 }
@@ -27,17 +28,30 @@ final class BreedPicturesViewModel: BreedPicturesViewModelable {
 
     let title: String
     private(set) var images: CurrentValueSubject<[BreedPictureModelViewModel], Error> = .init([])
+    private let breed: BreedListModelViewModel
+    private let favoritesRepository: FavoritesRepositoriable
     private let loader: BreedPicturesLoadable
 
     // MARK: Initialization
 
-    init(breed: BreedListModelViewModel, loader: BreedPicturesLoadable) {
+    init(breed: BreedListModelViewModel, favoritesRepository: FavoritesRepositoriable, loader: BreedPicturesLoadable) {
         self.title = "\(breed.displayName) \(Localizable.BreedPictures.navigationBarTitle)"
+        self.favoritesRepository = favoritesRepository
         self.loader = loader
+        self.breed = breed
         loadImageList()
     }
 
     // MARK: Functions
+
+    func changeFavoriteStatus(of viewModel: BreedPictureModelViewModel) {
+        viewModel.isFavorite.toggle()
+        if viewModel.isFavorite {
+            favoritesRepository.pictures.value.append(BreedPictureModel(url: viewModel.url, breed: viewModel.breed, image: viewModel.image))
+        } else {
+            favoritesRepository.pictures.value.removeAll(where: { $0.url == viewModel.url })
+        }
+    }
 
     func cancel(indexPath: IndexPath) {
         let model = images.value[indexPath.row]
@@ -61,7 +75,10 @@ final class BreedPicturesViewModel: BreedPicturesViewModelable {
         Task {
             do {
                 let result = try await loader.loadImageList()
-                let models = result.message.map { BreedPictureModelViewModel(url: $0) }
+                let models = result.message.map { imageURL in
+                    let isFavorite = favoritesRepository.pictures.value.contains { $0.url == imageURL}
+                    return BreedPictureModelViewModel(url: imageURL, breed: breed.name, isFavorite: isFavorite)
+                }
                 self.images.send(models)
             } catch {
                 self.images.send(completion: .failure(BreedPicturesViewModelError.failedImageListFetch))

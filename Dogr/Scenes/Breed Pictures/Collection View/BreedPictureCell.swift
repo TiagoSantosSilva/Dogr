@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BreedPictureCellDelegate: AnyObject {
-    func cell(_ cell: BreedPictureCell, didTapLikeButtonFor viewModel: BreedPictureModelViewModel)
+    func cell(_ cell: BreedPictureCell, didTapFavoriteButtonFor viewModel: BreedPictureModelViewModel)
 }
 
 final class BreedPictureCell: CollectionViewCell {
@@ -16,7 +16,7 @@ final class BreedPictureCell: CollectionViewCell {
     // MARK: Subviews
 
     private let imageView: UIImageView = .init()
-    private let likeButton: BreedPictureCellLikeButton = .init()
+    private let favoriteButton: BreedPictureCellFavoriteButton = .init()
 
     // MARK: Properties
 
@@ -35,8 +35,8 @@ final class BreedPictureCell: CollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
-        likeButton.reset()
-        likeButton.isHidden = true
+        favoriteButton.reset()
+        favoriteButton.isHidden = true
     }
 
     // MARK: Configuration
@@ -45,12 +45,12 @@ final class BreedPictureCell: CollectionViewCell {
         self.viewModel = viewModel
         self.delegate = delegate
         imageView.image = viewModel.image
-        likeButton.isHidden = viewModel.image == nil
-        likeButton.configure(isLiked: viewModel.isLiked == true)
+        favoriteButton.isHidden = viewModel.image == nil
+        favoriteButton.configure(isFavorite: viewModel.isFavorite == true)
     }
 
     func display(image: UIImage?) {
-        likeButton.isHidden = image == nil
+        favoriteButton.isHidden = image == nil
         imageView.transitionCrossDissolve {
             self.imageView.image = image
         }
@@ -59,13 +59,13 @@ final class BreedPictureCell: CollectionViewCell {
     // MARK: Setups
 
     private func setup() {
-        likeButton.isHidden = true
-        contentView.add(subviews: imageView, likeButton)
+        favoriteButton.isHidden = true
+        contentView.add(subviews: imageView, favoriteButton)
         setupStyle()
         setupConstraints()
         imageView.contentMode = .scaleAspectFill
 
-        likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        favoriteButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
     }
 
     private func setupStyle() {
@@ -79,30 +79,29 @@ final class BreedPictureCell: CollectionViewCell {
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            likeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.LikeButton.padding),
-            likeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.LikeButton.padding),
-            likeButton.heightAnchor.constraint(equalToConstant: Constraints.LikeButton.size),
-            likeButton.widthAnchor.constraint(equalToConstant: Constraints.LikeButton.size)
+            favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.LikeButton.padding),
+            favoriteButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.LikeButton.padding),
+            favoriteButton.heightAnchor.constraint(equalToConstant: Constraints.LikeButton.size),
+            favoriteButton.widthAnchor.constraint(equalToConstant: Constraints.LikeButton.size)
         ])
     }
 
     @objc
     private func likeButtonTapped(_ sender: UIButton) {
-        viewModel?.isLiked.toggle()
-        likeButton.configure(isLiked: viewModel?.isLiked == true)
+        favoriteButton.configure(isFavorite: !(viewModel?.isFavorite == true))
         guard let viewModel = viewModel else { return }
-        delegate?.cell(self, didTapLikeButtonFor: viewModel)
+        delegate?.cell(self, didTapFavoriteButtonFor: viewModel)
     }
 }
 
 private extension BreedPictureCell {
-    final class BreedPictureCellLikeButton: UIButton {
+    final class BreedPictureCellFavoriteButton: UIButton {
 
         // MARK:
 
         override init(frame: CGRect) {
             super.init(frame: frame)
-            setImage(LikeButtonImage.notLiked, for: .normal)
+            setImage(FavoriteButtonImage.notFavorite, for: .normal)
         }
 
         required init?(coder: NSCoder) {
@@ -111,20 +110,20 @@ private extension BreedPictureCell {
 
         // MARK:
 
-        func configure(isLiked: Bool) {
+        func configure(isFavorite: Bool) {
             transitionCrossDissolve {
-                self.setImage(isLiked ? LikeButtonImage.liked : LikeButtonImage.notLiked, for: .normal)
+                self.setImage(isFavorite ? FavoriteButtonImage.favorite : FavoriteButtonImage.notFavorite, for: .normal)
             }
         }
 
         func reset() {
-            setImage(LikeButtonImage.notLiked, for: .normal)
+            setImage(FavoriteButtonImage.notFavorite, for: .normal)
         }
     }
 
-    enum LikeButtonImage {
-        static let liked = UIImage(named: "heart-filled")
-        static let notLiked = UIImage(named: "heart-empty")
+    enum FavoriteButtonImage {
+        static let favorite = UIImage(named: "heart-filled")
+        static let notFavorite = UIImage(named: "heart-empty")
     }
 }
 

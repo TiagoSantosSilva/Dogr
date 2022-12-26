@@ -43,6 +43,8 @@
 		9ACEEE822958DEA500B1F12E /* BreedPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE812958DEA500B1F12E /* BreedPictureCell.swift */; };
 		9ACEEE842959121E00B1F12E /* BreedPicturesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE832959121E00B1F12E /* BreedPicturesCollectionViewLayout.swift */; };
 		9ACEEE862959127700B1F12E /* BreedListCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE852959127700B1F12E /* BreedListCollectionViewLayout.swift */; };
+		9ACEEE8B2959154E00B1F12E /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */; };
+		9ACEEE8E2959245D00B1F12E /* BreedPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE8D2959245D00B1F12E /* BreedPictureModel.swift */; };
 		9AD6CC492957E00A0091BBC9 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC482957E00A0091BBC9 /* HTTPHeader.swift */; };
 		9AD6CC4B2957E01B0091BBC9 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC4A2957E01B0091BBC9 /* NetworkEngine.swift */; };
 		9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC4C2957E0330091BBC9 /* NetworkRequestBuilder.swift */; };
@@ -129,6 +131,8 @@
 		9ACEEE812958DEA500B1F12E /* BreedPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPictureCell.swift; sourceTree = "<group>"; };
 		9ACEEE832959121E00B1F12E /* BreedPicturesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicturesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9ACEEE852959127700B1F12E /* BreedListCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCollectionViewLayout.swift; sourceTree = "<group>"; };
+		9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		9ACEEE8D2959245D00B1F12E /* BreedPictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPictureModel.swift; sourceTree = "<group>"; };
 		9AD6CC482957E00A0091BBC9 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		9AD6CC4A2957E01B0091BBC9 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		9AD6CC4C2957E0330091BBC9 /* NetworkRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestBuilder.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				9A72E8ED2957C7E700A30BC0 /* Application */,
 				9A72E8EF2957C81500A30BC0 /* Classes */,
 				9AD6CC452957DFEB0091BBC9 /* Network */,
+				9ACEEE892959152200B1F12E /* Persistence */,
 				9A72E9062957CF2200A30BC0 /* Scenes */,
 				9A72E8EE2957C7ED00A30BC0 /* Supporting Files */,
 			);
@@ -382,6 +387,23 @@
 				9A72E9182957D0E000A30BC0 /* BreedPicturesViewModel.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9ACEEE892959152200B1F12E /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9ACEEE8C2959245500B1F12E /* Favorites */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9ACEEE8C2959245500B1F12E /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				9ACEEE8D2959245D00B1F12E /* BreedPictureModel.swift */,
+				9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		9AD6CC452957DFEB0091BBC9 /* Network */ = {
@@ -629,6 +651,7 @@
 				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
 				9A72E90B2957CF8700A30BC0 /* BreedListCoordinator.swift in Sources */,
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
+				9ACEEE8B2959154E00B1F12E /* FavoritesRepository.swift in Sources */,
 				9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */,
 				9A72E9232957D36500A30BC0 /* UIImage+System.swift in Sources */,
 				9AD6CC4F2957E03F0091BBC9 /* NetworkResponseParser.swift in Sources */,
@@ -646,6 +669,7 @@
 				9AD6CC7B2957FB1E0091BBC9 /* CellDequeuable.swift in Sources */,
 				9A72E9032957CB8E00A30BC0 /* NavigationBarAppearance.swift in Sources */,
 				9A72E9192957D0E000A30BC0 /* BreedPicturesViewModel.swift in Sources */,
+				9ACEEE8E2959245D00B1F12E /* BreedPictureModel.swift in Sources */,
 				9AD6CC5D2957E3880091BBC9 /* BreedListLoader.swift in Sources */,
 				9AD6CC772957FAF80091BBC9 /* UICollectionView.swift in Sources */,
 				9AD6CC672957EA550091BBC9 /* BreedListCollectionViewController.swift in Sources */,

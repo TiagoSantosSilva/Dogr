@@ -10,6 +10,7 @@ import UIKit
 protocol BreedPicturesCollectionViewControllerDelegate: AnyObject {
     func collectionViewController(_ collectionViewController: BreedPicturesCollectionViewController, didEndDisplayingAt indexPath: IndexPath)
     func collectionViewController(_ collectionViewController: BreedPicturesCollectionViewController, willDisplay indexPath: IndexPath)
+    func collectionViewController(_ collectionViewController: BreedPicturesCollectionViewController, didFavoriteButtonFor viewModel: BreedPictureModelViewModel)
 }
 
 final class BreedPicturesCollectionViewController: CollectionViewController {
@@ -92,7 +93,7 @@ extension BreedPicturesCollectionViewController {
 // MARK: - BreedPictureCellDelegate
 
 extension BreedPicturesCollectionViewController: BreedPictureCellDelegate {
-    func cell(_ cell: BreedPictureCell, didTapLikeButtonFor viewModel: BreedPictureModelViewModel) {
-        print("TO DO")
+    func cell(_ cell: BreedPictureCell, didTapFavoriteButtonFor viewModel: BreedPictureModelViewModel) {
+        delegate?.collectionViewController(self, didFavoriteButtonFor: viewModel)
     }
 }

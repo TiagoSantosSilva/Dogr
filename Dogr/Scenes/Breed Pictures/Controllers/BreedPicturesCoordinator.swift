@@ -27,7 +27,7 @@ final class BreedPicturesCoordinator: Coordinator {
 
     func start() {
         let loader = BreedPicturesLoader(dependencies: dependencies, breed: breed)
-        let viewModel = BreedPicturesViewModel(breed: breed, loader: loader)
+        let viewModel = BreedPicturesViewModel(breed: breed, favoritesRepository: dependencies.favoritesRepository, loader: loader)
         let viewController = BreedPicturesViewController(viewModel: viewModel)
         viewController.delegate = self
 
