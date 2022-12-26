@@ -267,9 +267,9 @@
 		9A72E8EF2957C81500A30BC0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9A72E9212957D35900A30BC0 /* Extensions */,
-				9A72E91E2957D29E00A30BC0 /* Enumerations */,
 				9A72E8F62957CA4600A30BC0 /* Base */,
+				9A72E91E2957D29E00A30BC0 /* Enumerations */,
+				9A72E9212957D35900A30BC0 /* Extensions */,
 				9A72E8F72957CA4D00A30BC0 /* Protocols */,
 			);
 			path = Classes;
