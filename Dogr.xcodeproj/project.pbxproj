@@ -45,6 +45,8 @@
 		9ACEEE862959127700B1F12E /* BreedListCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE852959127700B1F12E /* BreedListCollectionViewLayout.swift */; };
 		9ACEEE8B2959154E00B1F12E /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */; };
 		9ACEEE8E2959245D00B1F12E /* BreedPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE8D2959245D00B1F12E /* BreedPictureModel.swift */; };
+		9ACEEE90295925B900B1F12E /* FavoritePicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE8F295925B900B1F12E /* FavoritePicturesCollectionViewController.swift */; };
+		9ACEEE932959272700B1F12E /* FavoritePicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACEEE922959272700B1F12E /* FavoritePicturesCell.swift */; };
 		9AD6CC492957E00A0091BBC9 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC482957E00A0091BBC9 /* HTTPHeader.swift */; };
 		9AD6CC4B2957E01B0091BBC9 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC4A2957E01B0091BBC9 /* NetworkEngine.swift */; };
 		9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC4C2957E0330091BBC9 /* NetworkRequestBuilder.swift */; };
@@ -133,6 +135,8 @@
 		9ACEEE852959127700B1F12E /* BreedListCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
 		9ACEEE8D2959245D00B1F12E /* BreedPictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPictureModel.swift; sourceTree = "<group>"; };
+		9ACEEE8F295925B900B1F12E /* FavoritePicturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesCollectionViewController.swift; sourceTree = "<group>"; };
+		9ACEEE922959272700B1F12E /* FavoritePicturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesCell.swift; sourceTree = "<group>"; };
 		9AD6CC482957E00A0091BBC9 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		9AD6CC4A2957E01B0091BBC9 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		9AD6CC4C2957E0330091BBC9 /* NetworkRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestBuilder.swift; sourceTree = "<group>"; };
@@ -329,9 +333,11 @@
 		9A72E9092957CF6D00A30BC0 /* Favorite Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				9ACEEE912959271C00B1F12E /* Collection View */,
 				9A72E90E2957CF9A00A30BC0 /* FavoritePicturesCoordinator.swift */,
 				9A72E91A2957D13800A30BC0 /* FavoritePicturesViewController.swift */,
 				9A72E91C2957D13D00A30BC0 /* FavoritePicturesViewModel.swift */,
+				9ACEEE8F295925B900B1F12E /* FavoritePicturesCollectionViewController.swift */,
 			);
 			path = "Favorite Pictures";
 			sourceTree = "<group>";
@@ -404,6 +410,14 @@
 				9ACEEE8A2959154E00B1F12E /* FavoritesRepository.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		9ACEEE912959271C00B1F12E /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				9ACEEE922959272700B1F12E /* FavoritePicturesCell.swift */,
+			);
+			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		9AD6CC452957DFEB0091BBC9 /* Network */ = {
@@ -653,8 +667,10 @@
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
 				9ACEEE8B2959154E00B1F12E /* FavoritesRepository.swift in Sources */,
 				9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */,
+				9ACEEE90295925B900B1F12E /* FavoritePicturesCollectionViewController.swift in Sources */,
 				9A72E9232957D36500A30BC0 /* UIImage+System.swift in Sources */,
 				9AD6CC4F2957E03F0091BBC9 /* NetworkResponseParser.swift in Sources */,
+				9ACEEE932959272700B1F12E /* FavoritePicturesCell.swift in Sources */,
 				9AD6CC602957E3F90091BBC9 /* BreedListResult.swift in Sources */,
 				9AD6CC792957FB070091BBC9 /* UICollectionViewCell.swift in Sources */,
 				9A72E90F2957CF9A00A30BC0 /* FavoritePicturesCoordinator.swift in Sources */,

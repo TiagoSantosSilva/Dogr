@@ -25,7 +25,8 @@ final class FavoritePicturesCoordinator: Coordinator, ViewControllerRepresentabl
     init(dependencies: DependencyContainable) {
         self.dependencies = dependencies
 
-        let viewController = FavoritePicturesViewController()
+        let viewModel = FavoritePicturesViewModel(dependencies: dependencies)
+        let viewController = FavoritePicturesViewController(viewModel: viewModel)
         let navigationController = NavigationController(rootViewController: viewController)
 
         self.navigator = Navigator(dependencies: dependencies, navigationController: navigationController)

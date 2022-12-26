@@ -15,7 +15,7 @@ protocol BreedPicturesCollectionViewControllerDelegate: AnyObject {
 
 final class BreedPicturesCollectionViewController: CollectionViewController {
 
-    // MARK: Properties
+    // MARK: Enumerations
 
     private enum Section {
         case main
