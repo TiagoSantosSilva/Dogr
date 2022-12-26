@@ -11,11 +11,10 @@ protocol BreedPictureCellDelegate: AnyObject {
     func cell(_ cell: BreedPictureCell, didTapFavoriteButtonFor viewModel: BreedPictureModelViewModel)
 }
 
-final class BreedPictureCell: CollectionViewCell {
+final class BreedPictureCell: ImageCell {
 
     // MARK: Subviews
 
-    private let imageView: UIImageView = .init()
     private let favoriteButton: BreedPictureCellFavoriteButton = .init()
 
     // MARK: Properties
@@ -34,7 +33,6 @@ final class BreedPictureCell: CollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
         favoriteButton.reset()
         favoriteButton.isHidden = true
     }
@@ -60,25 +58,14 @@ final class BreedPictureCell: CollectionViewCell {
 
     private func setup() {
         favoriteButton.isHidden = true
-        contentView.add(subviews: imageView, favoriteButton)
-        setupStyle()
+        contentView.add(subviews: favoriteButton)
         setupConstraints()
-        imageView.contentMode = .scaleAspectFill
 
         favoriteButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
     }
 
-    private func setupStyle() {
-        round()
-    }
-
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
             favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.LikeButton.padding),
             favoriteButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.LikeButton.padding),
             favoriteButton.heightAnchor.constraint(equalToConstant: Constraints.LikeButton.size),
