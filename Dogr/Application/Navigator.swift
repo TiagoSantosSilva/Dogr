@@ -13,7 +13,7 @@ enum NavigatorTransition {
     case modal
 }
 
-protocol Navigatable {
+protocol Navigatable: AnyObject {
     var navigationController: NavigationController { get }
 
     func dismiss()

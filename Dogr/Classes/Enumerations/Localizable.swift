@@ -22,4 +22,10 @@ enum Localizable {
         static let tabBarTitle = "Favorites"
         static let navigationBarTitle = "Favorites"
     }
+
+    enum FavoritePicturesFilter {
+        static let title = "Filter"
+        static let resetButton = "Reset"
+        static let doneButton = "Done"
+    }
 }

@@ -13,12 +13,14 @@ final class BreedPictureGroupModel: Hashable {
 
     let uuid: UUID = .init()
     let breed: String
+    let name: String
     var pictures: [BreedPictureModel]
 
     // MARK: Initialization
 
     init(breed: String, pictures: [BreedPictureModel]) {
         self.breed = breed
+        self.name = breed.capitalized
         self.pictures = pictures
     }
 

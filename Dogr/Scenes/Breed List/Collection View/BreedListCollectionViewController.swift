@@ -13,7 +13,7 @@ protocol BreedListCollectionViewControllerDelegate: AnyObject {
 
 final class BreedListCollectionViewController: CollectionViewController {
 
-    // MARK: Enum
+    // MARK: Enumerations
 
     private enum Section {
         case main

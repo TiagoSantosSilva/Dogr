@@ -30,7 +30,7 @@ final class FavoritePictureHeader: CollectionReusableView {
     // MARK: - Functions
 
     func configure(with group: BreedPictureGroupModel) {
-        nameLabel.text = group.breed.capitalized
+        nameLabel.text = group.name
     }
 
     // MARK: - Setups

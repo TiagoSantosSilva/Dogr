@@ -78,6 +78,14 @@
 		9AD6CC7D2957FB430091BBC9 /* StringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC7C2957FB430091BBC9 /* StringError.swift */; };
 		9AD6CC7F2957FC480091BBC9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC7E2957FC480091BBC9 /* UIViewController.swift */; };
 		9AD6CC812957FDC70091BBC9 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6CC802957FDC70091BBC9 /* CATransition.swift */; };
+		9ADA268B295B3F9E002320D6 /* FavoritePicturesFilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA268A295B3F9E002320D6 /* FavoritePicturesFilterCoordinator.swift */; };
+		9ADA268D295B3FB0002320D6 /* FavoritePicturesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA268C295B3FB0002320D6 /* FavoritePicturesFilterViewController.swift */; };
+		9ADA268F295B3FB7002320D6 /* FavoritePicturesFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA268E295B3FB7002320D6 /* FavoritePicturesFilterViewModel.swift */; };
+		9ADA2691295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2690295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift */; };
+		9ADA2696295B6517002320D6 /* FavoritePicturesFilterItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2695295B6517002320D6 /* FavoritePicturesFilterItemViewModel.swift */; };
+		9ADA2698295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2697295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift */; };
+		9ADA269A295B6706002320D6 /* CollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */; };
+		9ADA269C295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +181,14 @@
 		9AD6CC7C2957FB430091BBC9 /* StringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringError.swift; sourceTree = "<group>"; };
 		9AD6CC7E2957FC480091BBC9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		9AD6CC802957FDC70091BBC9 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
+		9ADA268A295B3F9E002320D6 /* FavoritePicturesFilterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterCoordinator.swift; sourceTree = "<group>"; };
+		9ADA268C295B3FB0002320D6 /* FavoritePicturesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterViewController.swift; sourceTree = "<group>"; };
+		9ADA268E295B3FB7002320D6 /* FavoritePicturesFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterViewModel.swift; sourceTree = "<group>"; };
+		9ADA2690295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterCollectionViewController.swift; sourceTree = "<group>"; };
+		9ADA2695295B6517002320D6 /* FavoritePicturesFilterItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterItemViewModel.swift; sourceTree = "<group>"; };
+		9ADA2697295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterCollectionViewLayout.swift; sourceTree = "<group>"; };
+		9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListCell.swift; sourceTree = "<group>"; };
+		9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +312,7 @@
 				9A72E8FE2957CB3D00A30BC0 /* NavigationController.swift */,
 				9A72E8F02957C81E00A30BC0 /* TabBarController.swift */,
 				9A72E8F22957C8C000A30BC0 /* ViewController.swift */,
+				9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -345,6 +362,7 @@
 		9A72E9092957CF6D00A30BC0 /* Favorite Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				9ADA2688295B3F8F002320D6 /* Scenes */,
 				9ACEEE912959271C00B1F12E /* Collection View */,
 				9ACEEE9629592B8F00B1F12E /* Controllers */,
 			);
@@ -521,6 +539,52 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		9ADA2688295B3F8F002320D6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA2689295B3F94002320D6 /* Filters */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9ADA2689295B3F94002320D6 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA2694295B6502002320D6 /* Model */,
+				9ADA2693295B64F5002320D6 /* Controllers */,
+				9ADA2692295B64F0002320D6 /* Collection View */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		9ADA2692295B64F0002320D6 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA2690295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift */,
+				9ADA2697295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift */,
+				9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		9ADA2693295B64F5002320D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA268A295B3F9E002320D6 /* FavoritePicturesFilterCoordinator.swift */,
+				9ADA268C295B3FB0002320D6 /* FavoritePicturesFilterViewController.swift */,
+				9ADA268E295B3FB7002320D6 /* FavoritePicturesFilterViewModel.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9ADA2694295B6502002320D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA2695295B6517002320D6 /* FavoritePicturesFilterItemViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,9 +721,11 @@
 				9ACEEE9C2959378500B1F12E /* CollectionReusableView.swift in Sources */,
 				9A72E9172957D0DA00A30BC0 /* BreedPicturesViewController.swift in Sources */,
 				9A72E8FD2957CACB00A30BC0 /* DependencyContainer.swift in Sources */,
+				9ADA269A295B6706002320D6 /* CollectionViewListCell.swift in Sources */,
 				9A72E8FF2957CB3D00A30BC0 /* NavigationController.swift in Sources */,
 				9AD6CC622957E80C0091BBC9 /* BreedListModelViewModel.swift in Sources */,
 				9A72E90D2957CF9100A30BC0 /* BreedPicturesCoordinator.swift in Sources */,
+				9ADA268D295B3FB0002320D6 /* FavoritePicturesFilterViewController.swift in Sources */,
 				9A72E8F52957CA2E00A30BC0 /* AppCoordinator.swift in Sources */,
 				9ACEEE822958DEA500B1F12E /* BreedPictureCell.swift in Sources */,
 				9AD6CC692957EB770091BBC9 /* BreedListCell.swift in Sources */,
@@ -674,9 +740,11 @@
 				9AD6CC712957F93F0091BBC9 /* UIView.swift in Sources */,
 				9A72E8F32957C8C000A30BC0 /* ViewController.swift in Sources */,
 				9AD6CC7F2957FC480091BBC9 /* UIViewController.swift in Sources */,
+				9ADA2696295B6517002320D6 /* FavoritePicturesFilterItemViewModel.swift in Sources */,
 				9ACEEE792958CC0400B1F12E /* BreedPicturesModelResult.swift in Sources */,
 				9AD6CC732957FAA90091BBC9 /* CellRegistable.swift in Sources */,
 				9A72E91D2957D13D00A30BC0 /* FavoritePicturesViewModel.swift in Sources */,
+				9ADA268F295B3FB7002320D6 /* FavoritePicturesFilterViewModel.swift in Sources */,
 				9AD6CC752957FAC10091BBC9 /* Identifiable.swift in Sources */,
 				9AD6CC6B2957F3D30091BBC9 /* CollectionViewController.swift in Sources */,
 				9A72E9152957D00600A30BC0 /* ViewControllerRepresentable.swift in Sources */,
@@ -685,6 +753,7 @@
 				9AD6CC4B2957E01B0091BBC9 /* NetworkEngine.swift in Sources */,
 				9ACEEE862959127700B1F12E /* BreedListCollectionViewLayout.swift in Sources */,
 				9A72E9052957CC0900A30BC0 /* TabBarCoordinator.swift in Sources */,
+				9ADA2698295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift in Sources */,
 				9AD6CC6D2957F3F10091BBC9 /* CollectionView.swift in Sources */,
 				9AD6CC492957E00A0091BBC9 /* HTTPHeader.swift in Sources */,
 				9ACEEE7E2958DBDC00B1F12E /* NSDirectionalEdgeInsets.swift in Sources */,
@@ -692,6 +761,7 @@
 				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
 				9A72E90B2957CF8700A30BC0 /* BreedListCoordinator.swift in Sources */,
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
+				9ADA2691295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift in Sources */,
 				9ACEEE8B2959154E00B1F12E /* FavoritesRepository.swift in Sources */,
 				9AD6CC4D2957E0330091BBC9 /* NetworkRequestBuilder.swift in Sources */,
 				9ACEEE90295925B900B1F12E /* FavoritePicturesCollectionViewController.swift in Sources */,
@@ -705,10 +775,12 @@
 				9A72E8BE2957C1EF00A30BC0 /* AppDelegate.swift in Sources */,
 				9A72E8F12957C81E00A30BC0 /* TabBarController.swift in Sources */,
 				9A72E9132957CFAB00A30BC0 /* BreedListViewModel.swift in Sources */,
+				9ADA268B295B3F9E002320D6 /* FavoritePicturesFilterCoordinator.swift in Sources */,
 				9A72E8FB2957CAAD00A30BC0 /* Navigator.swift in Sources */,
 				9ACEEE9E295938AE00B1F12E /* FavoritePicturesCollectionViewLayout.swift in Sources */,
 				9ACEEE762958C88700B1F12E /* BreedPicturesLoader.swift in Sources */,
 				9ACEEE842959121E00B1F12E /* BreedPicturesCollectionViewLayout.swift in Sources */,
+				9ADA269C295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift in Sources */,
 				9A72E91B2957D13800A30BC0 /* FavoritePicturesViewController.swift in Sources */,
 				9AD6CC7B2957FB1E0091BBC9 /* CellDequeuable.swift in Sources */,
 				9A72E9032957CB8E00A30BC0 /* NavigationBarAppearance.swift in Sources */,

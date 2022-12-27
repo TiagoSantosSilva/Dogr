@@ -21,6 +21,7 @@ final class BreedPicturesCoordinator: Coordinator {
         self.dependencies = dependencies
         self.navigator = navigator
         self.breed = breed
+        super.init()
     }
 
     // MARK: Functions
