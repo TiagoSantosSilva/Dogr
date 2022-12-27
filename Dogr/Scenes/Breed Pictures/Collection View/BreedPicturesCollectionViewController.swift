@@ -39,7 +39,10 @@ final class BreedPicturesCollectionViewController: CollectionViewController {
         let layout = BreedPicturesCollectionViewLayout()
         let collectionView = CollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(collectionViewLayout: layout)
-        self.dataSource = DataSource(collectionView: collectionView, cellProvider: Self.cellProvider(delegate: self))
+        self.dataSource = DataSource(collectionView: collectionView, cellProvider: Self.cellProvider { [weak self] item in
+            guard let self else { return }
+            self.delegate?.collectionViewController(self, didFavoriteButtonFor: item)
+        })
         self.collectionView = collectionView
     }
 
@@ -59,15 +62,15 @@ final class BreedPicturesCollectionViewController: CollectionViewController {
             snapshot.appendSections([.main])
             snapshot.appendItems(images)
             collectionView.layer.add(CATransition.fade, forKey: nil)
-            await dataSource?.apply(snapshot, animatingDifferences: false)
+            dataSource?.apply(snapshot, animatingDifferences: false)
         }
     }
 
     // MARK: Setups
 
-    private static func cellProvider(delegate: BreedPictureCellDelegate) -> ((UICollectionView, IndexPath, BreedPictureModelViewModel) -> UICollectionViewCell?) {
+    private static func cellProvider(favoriteTapCompletion: @escaping (BreedPictureModelViewModel) -> Void) -> ((UICollectionView, IndexPath, BreedPictureModelViewModel) -> UICollectionViewCell?) {
         let cellRegistration = CellRegistration { cell, _, cellViewModel in
-            cell.configure(with: cellViewModel, delegate: delegate)
+            cell.configure(with: cellViewModel, buttonTapCompletion: favoriteTapCompletion)
         }
 
         return { collectionView, indexPath, cellViewModel in
@@ -87,13 +90,5 @@ extension BreedPicturesCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         delegate?.collectionViewController(self, willDisplay: indexPath)
-    }
-}
-
-// MARK: - BreedPictureCellDelegate
-
-extension BreedPicturesCollectionViewController: BreedPictureCellDelegate {
-    func cell(_ cell: BreedPictureCell, didTapFavoriteButtonFor viewModel: BreedPictureModelViewModel) {
-        delegate?.collectionViewController(self, didFavoriteButtonFor: viewModel)
     }
 }

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol BreedPictureCellDelegate: AnyObject {
-    func cell(_ cell: BreedPictureCell, didTapFavoriteButtonFor viewModel: BreedPictureModelViewModel)
-}
-
 final class BreedPictureCell: ImageCell {
 
     // MARK: Subviews
@@ -19,8 +15,8 @@ final class BreedPictureCell: ImageCell {
 
     // MARK: Properties
 
-    weak var delegate: BreedPictureCellDelegate?
     private var viewModel: BreedPictureModelViewModel?
+    private var buttonTapCompletion: ((BreedPictureModelViewModel) -> Void)?
 
     // MARK: Initialization
 
@@ -39,9 +35,9 @@ final class BreedPictureCell: ImageCell {
 
     // MARK: Configuration
 
-    func configure(with viewModel: BreedPictureModelViewModel, delegate: BreedPictureCellDelegate) {
+    func configure(with viewModel: BreedPictureModelViewModel, buttonTapCompletion: @escaping (BreedPictureModelViewModel) -> Void) {
         self.viewModel = viewModel
-        self.delegate = delegate
+        self.buttonTapCompletion = buttonTapCompletion
         imageView.image = viewModel.image
         favoriteButton.isHidden = viewModel.image == nil
         favoriteButton.configure(isFavorite: viewModel.isFavorite == true)
@@ -49,8 +45,8 @@ final class BreedPictureCell: ImageCell {
 
     func display(image: UIImage?) {
         favoriteButton.isHidden = image == nil
-        imageView.transitionCrossDissolve {
-            self.imageView.image = image
+        imageView.transitionCrossDissolve { [weak self] in
+            self?.imageView.image = image
         }
     }
 
@@ -77,7 +73,7 @@ final class BreedPictureCell: ImageCell {
     private func likeButtonTapped(_ sender: UIButton) {
         favoriteButton.configure(isFavorite: !(viewModel?.isFavorite == true))
         guard let viewModel = viewModel else { return }
-        delegate?.cell(self, didTapFavoriteButtonFor: viewModel)
+        buttonTapCompletion?(viewModel)
     }
 }
 
