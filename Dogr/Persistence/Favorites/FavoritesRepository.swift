@@ -27,38 +27,65 @@ final class FavoritesRepository: FavoritesRepositoriable {
 
     func add(_ breed: BreedPictureModel) {
         guard let group = pictures.group(for: breed.name) else {
-            pictures.value.append(BreedPictureGroupModel(breed: breed.name, pictures: [breed]))
+            pictures.add(BreedPictureGroupModel(breed: breed.name, pictures: [breed]))
+            pictures.sortByName()
             return
         }
 
         group.pictures.append(breed)
-        updateSubject()
+        pictures.send()
     }
 
     func remove(url: String, for breed: String) {
         guard let groupForBreed = pictures.group(for: breed) else { return }
 
-        groupForBreed.pictures = groupForBreed.pictures.filter { $0.url != url }
+        groupForBreed.remove(url: url)
         guard groupForBreed.pictures.isEmpty else {
-            updateSubject()
+            pictures.send()
             return
         }
-        pictures.value.removeAll(where: { $0 == groupForBreed })
+        pictures.remove(groupForBreed)
     }
 
     func isImageFavorite(url: String, for breed: String) -> Bool {
         guard let groupForBreed = pictures.group(for: breed) else { return false }
 
-        return groupForBreed.pictures.contains(where: { $0.url == url })
-    }
-
-    private func updateSubject() {
-        pictures.send(pictures.value)
+        return groupForBreed.contains(url: url)
     }
 }
 
-extension FavoritePicturesValueSubject {
+// MARK: - BreedPictureGroupModel
+
+private extension BreedPictureGroupModel {
+    func contains(url: String) -> Bool {
+        pictures.contains(where: { $0.url == url })
+    }
+
+    func remove(url: String) {
+        pictures = pictures.filter { $0.url != url }
+    }
+}
+
+// MARK: - FavoritePicturesValueSubject
+
+private extension FavoritePicturesValueSubject {
     func group(for breed: String) -> BreedPictureGroupModel? {
         value.first { $0.breed == breed }
+    }
+
+    func sortByName() {
+        value.sort { $0.breed < $1.breed }
+    }
+
+    func add(_ breed: BreedPictureGroupModel) {
+        value.append(breed)
+    }
+
+    func remove(_ breed: BreedPictureGroupModel) {
+        value.removeAll(where: { $0 == breed })
+    }
+
+    func send() {
+        send(value)
     }
 }

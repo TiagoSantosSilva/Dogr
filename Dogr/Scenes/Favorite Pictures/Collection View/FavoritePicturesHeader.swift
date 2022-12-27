@@ -50,7 +50,7 @@ final class FavoritePictureHeader: CollectionReusableView {
     }
 
     private func setupStyle() {
-        nameLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        nameLabel.font = Style.NameLabel.font
         nameLabel.textAlignment = .center
     }
 }
@@ -61,6 +61,12 @@ private extension FavoritePictureHeader {
     enum Constraints {
         enum NameLabel {
             static let padding: CGFloat = 8
+        }
+    }
+
+    enum Style {
+        enum NameLabel {
+            static let font: UIFont = .systemFont(ofSize: 20, weight: .bold)
         }
     }
 }
