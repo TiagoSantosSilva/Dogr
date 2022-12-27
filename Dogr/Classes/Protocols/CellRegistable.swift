@@ -7,9 +7,9 @@
 
 import UIKit
 
-public protocol CellRegistable {}
+protocol CellRegistable {}
 
-public extension CellRegistable where Self: UICollectionView {
+extension CellRegistable where Self: UICollectionView {
     func register<T: UICollectionViewCell>(_: T.Type) {
         let bundle = Bundle(for: T.self)
         let nib = UINib(nibName: T.name, bundle: bundle)

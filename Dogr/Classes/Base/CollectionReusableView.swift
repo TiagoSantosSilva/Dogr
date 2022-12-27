@@ -11,13 +11,13 @@ class CollectionReusableView: UICollectionReusableView {
 
     // MARK: - Initialization
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         stylize()
     }
 
     @available(*, unavailable)
-    public required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         nil
     }
 

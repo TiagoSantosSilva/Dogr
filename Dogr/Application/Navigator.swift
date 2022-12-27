@@ -43,7 +43,7 @@ final class Navigator: Navigatable {
         self.navigationController = navigationController
     }
 
-    // MARK: Public Functions
+    // MARK: Functions
 
     func dismiss() {
         navigationController.dismiss(animated: true, completion: nil)

@@ -7,9 +7,9 @@
 
 import UIKit
 
-public protocol CellDequeuable {}
+protocol CellDequeuable {}
 
-public extension CellDequeuable where Self: UICollectionView {
+extension CellDequeuable where Self: UICollectionView {
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T else { fatalError(StringError.dequeueReusableCell) }
         return cell
