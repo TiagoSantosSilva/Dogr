@@ -36,6 +36,11 @@ enum Localizable {
         enum TabBar {
             static let title = "Favorites"
         }
+
+        enum EmptyBar {
+            static let title = "This is quiet, too quiet... 👀"
+            static let message = "Set some pictures as your favorites so they show up on this gallery!"
+        }
     }
 
     enum FavoritePicturesFilter {

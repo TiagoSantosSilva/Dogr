@@ -23,6 +23,8 @@ final class FavoritePicturesViewController: ViewController {
     private let viewModel: FavoritePicturesViewModelable
     private var cancellables: Set<AnyCancellable> = .init()
 
+    private lazy var emptyView = FavoritePicturesEmptyView()
+
     // MARK: Initialization
 
     init(viewModel: FavoritePicturesViewModelable) {
@@ -37,6 +39,8 @@ final class FavoritePicturesViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        edgesForExtendedLayout = []
         setupContent()
         setupSubviews()
     }
@@ -55,14 +59,36 @@ final class FavoritePicturesViewController: ViewController {
     }
 
     private func setupSubviews() {
-        add(collectionViewController)
         setupRightBarButtonItem()
     }
 
     private func setupContent() {
         viewModel.groups.sink { [weak self] in
+            if $0.isEmpty {
+                guard self?.emptyView.superview == nil else { return }
+                self?.collectionViewController.remove()
+                self?.setupEmptyView()
+            } else {
+                guard self?.collectionViewController.parent == nil else { return }
+                self?.emptyView.removeFromSuperview()
+                self?.setupCollectionView()
+            }
             self?.collectionViewController.update(with: $0)
         }.store(in: &cancellables)
+    }
+
+    private func setupEmptyView() {
+        view.addSubview(emptyView)
+        NSLayoutConstraint.activate([
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyView.topAnchor.constraint(equalTo: view.topAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
+
+    private func setupCollectionView() {
+        add(collectionViewController)
     }
 
     private func setupRightBarButtonItem(isFilterButtonFilled: Bool = false) {
