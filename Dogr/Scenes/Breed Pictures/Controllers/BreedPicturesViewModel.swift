@@ -35,7 +35,7 @@ final class BreedPicturesViewModel: BreedPicturesViewModelable {
     // MARK: Initialization
 
     init(breed: BreedListModelViewModel, favoritesRepository: FavoritesRepositoriable, loader: BreedPicturesLoadable) {
-        self.title = "\(breed.displayName) \(Localizable.BreedPictures.navigationBarTitle)"
+        self.title = "\(breed.displayName) \(Localizable.BreedPictures.NavigationBar.title)"
         self.favoritesRepository = favoritesRepository
         self.loader = loader
         self.breed = breed

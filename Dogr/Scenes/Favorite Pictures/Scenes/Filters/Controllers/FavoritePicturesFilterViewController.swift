@@ -46,19 +46,19 @@ final class FavoritePicturesFilterViewController: ViewController {
     // MARK: Setups
 
     private func setupNavigationBar() {
-        let resetButton = UIBarButtonItem(title: Localizable.FavoritePicturesFilter.resetButton,
+        let resetButton = UIBarButtonItem(title: Localizable.FavoritePicturesFilter.NavigationBar.reset,
                                           style: .done,
                                           target: self,
                                           action: #selector(resetButtonTapped))
         navigationItem.setLeftBarButton(resetButton, animated: false)
-        let doneButton = UIBarButtonItem(title: Localizable.FavoritePicturesFilter.doneButton,
+        let doneButton = UIBarButtonItem(title: Localizable.FavoritePicturesFilter.NavigationBar.done,
                                          style: .done,
                                          target: self,
                                          action: #selector(doneButtonTapped))
         navigationItem.setRightBarButton(doneButton, animated: false)
 
         navigationController?.navigationBar.prefersLargeTitles = false
-        title = Localizable.FavoritePicturesFilter.title
+        title = Localizable.FavoritePicturesFilter.NavigationBar.title
     }
 
     private func setupSubviews() {

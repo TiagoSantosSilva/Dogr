@@ -51,7 +51,7 @@ final class FavoritePicturesViewController: ViewController {
     // MARK: Setups
 
     private func setupNavigationBar() {
-        title = Localizable.FavoritePictures.navigationBarTitle
+        title = Localizable.FavoritePictures.NavigationBar.title
     }
 
     private func setupSubviews() {

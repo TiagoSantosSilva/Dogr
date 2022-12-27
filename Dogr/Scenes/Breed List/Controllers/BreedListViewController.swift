@@ -42,7 +42,7 @@ final class BreedListViewController: ViewController {
     // MARK: Setups
 
     private func setupNavigationBar() {
-        title = Localizable.BreedList.navigationBarTitle
+        title = Localizable.BreedList.NavigationBar.title
     }
 
     private func setupSubviews() {

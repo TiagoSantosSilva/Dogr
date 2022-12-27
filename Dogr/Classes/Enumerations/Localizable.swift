@@ -9,23 +9,40 @@ import Foundation
 
 enum Localizable {
     enum BreedList {
-        static let tabBarTitle = "Breeds"
-        static let navigationBarTitle = "Breeds"
+        enum NavigationBar {
+            static let title = "Breeds"
+        }
+
+        enum TabBar {
+            static let title = "Breeds"
+        }
     }
 
     enum BreedPictures {
-        static let tabBarTitle = "Pictures"
-        static let navigationBarTitle = "Pictures"
+        enum NavigationBar {
+            static let title = "Pictures"
+        }
+
+        enum TabBar {
+            static let title = "Pictures"
+        }
     }
 
     enum FavoritePictures {
-        static let tabBarTitle = "Favorites"
-        static let navigationBarTitle = "Favorites"
+        enum NavigationBar {
+            static let title = "Favorites"
+        }
+
+        enum TabBar {
+            static let title = "Favorites"
+        }
     }
 
     enum FavoritePicturesFilter {
-        static let title = "Filter"
-        static let resetButton = "Reset"
-        static let doneButton = "Done"
+        enum NavigationBar {
+            static let title = "Filter"
+            static let reset = "Reset"
+            static let done = "Done"
+        }
     }
 }

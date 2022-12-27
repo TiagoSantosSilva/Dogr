@@ -32,8 +32,8 @@ final class TabBarCoordinator: Coordinator {
 
         [breedListCoordinator, favoritePicturesCoordinator].forEach { coordinators.append($0) }
         let viewControllers = ([breedListCoordinator, favoritePicturesCoordinator] as [ViewControllerRepresentable]).map { $0.viewController }
-        let items: [UITabBarItem] = [.init(title: Localizable.BreedList.tabBarTitle, image: .TabBar.breedList, selectedImage: .TabBar.breedList),
-                                     .init(title: Localizable.FavoritePictures.tabBarTitle, image: .TabBar.favoritePictures, selectedImage: .TabBar.favoritePictures)]
+        let items: [UITabBarItem] = [.init(title: Localizable.BreedList.TabBar.title, image: .TabBar.breedList, selectedImage: .TabBar.breedList),
+                                     .init(title: Localizable.FavoritePictures.TabBar.title, image: .TabBar.favoritePictures, selectedImage: .TabBar.favoritePictures)]
 
         items.enumerated().forEach { viewControllers[$0.offset].tabBarItem = $0.element }
 

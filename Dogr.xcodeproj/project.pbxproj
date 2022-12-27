@@ -86,6 +86,8 @@
 		9ADA2698295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2697295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift */; };
 		9ADA269A295B6706002320D6 /* CollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */; };
 		9ADA269C295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */; };
+		9ADA269F295B90F5002320D6 /* FavoritePicturesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA269E295B90F5002320D6 /* FavoritePicturesEmptyView.swift */; };
+		9ADA26A1295B910D002320D6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA26A0295B910D002320D6 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +191,8 @@
 		9ADA2697295B65AE002320D6 /* FavoritePicturesFilterCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesFilterCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListCell.swift; sourceTree = "<group>"; };
 		9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesCollectionViewCell.swift; sourceTree = "<group>"; };
+		9ADA269E295B90F5002320D6 /* FavoritePicturesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesEmptyView.swift; sourceTree = "<group>"; };
+		9ADA26A0295B910D002320D6 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,13 +310,14 @@
 				9AD6CC6C2957F3F10091BBC9 /* CollectionView.swift */,
 				9AD6CC6E2957F4280091BBC9 /* CollectionViewCell.swift */,
 				9AD6CC6A2957F3D30091BBC9 /* CollectionViewController.swift */,
+				9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */,
 				9ACEEE942959299600B1F12E /* ImageCell.swift */,
 				9A72E9002957CB6800A30BC0 /* NavigationBar.swift */,
 				9A72E9022957CB8E00A30BC0 /* NavigationBarAppearance.swift */,
 				9A72E8FE2957CB3D00A30BC0 /* NavigationController.swift */,
 				9A72E8F02957C81E00A30BC0 /* TabBarController.swift */,
+				9ADA26A0295B910D002320D6 /* View.swift */,
 				9A72E8F22957C8C000A30BC0 /* ViewController.swift */,
-				9ADA2699295B6706002320D6 /* CollectionViewListCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 		9A72E9092957CF6D00A30BC0 /* Favorite Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				9ADA269D295B90EC002320D6 /* View */,
 				9ADA2688295B3F8F002320D6 /* Scenes */,
 				9ACEEE912959271C00B1F12E /* Collection View */,
 				9ACEEE9629592B8F00B1F12E /* Controllers */,
@@ -585,6 +591,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9ADA269D295B90EC002320D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9ADA269E295B90F5002320D6 /* FavoritePicturesEmptyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -759,6 +773,7 @@
 				9ACEEE7E2958DBDC00B1F12E /* NSDirectionalEdgeInsets.swift in Sources */,
 				9A72E9112957CFA600A30BC0 /* BreedListViewController.swift in Sources */,
 				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
+				9ADA26A1295B910D002320D6 /* View.swift in Sources */,
 				9A72E90B2957CF8700A30BC0 /* BreedListCoordinator.swift in Sources */,
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
 				9ADA2691295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift in Sources */,
@@ -783,6 +798,7 @@
 				9ADA269C295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift in Sources */,
 				9A72E91B2957D13800A30BC0 /* FavoritePicturesViewController.swift in Sources */,
 				9AD6CC7B2957FB1E0091BBC9 /* CellDequeuable.swift in Sources */,
+				9ADA269F295B90F5002320D6 /* FavoritePicturesEmptyView.swift in Sources */,
 				9A72E9032957CB8E00A30BC0 /* NavigationBarAppearance.swift in Sources */,
 				9A72E9192957D0E000A30BC0 /* BreedPicturesViewModel.swift in Sources */,
 				9ACEEE8E2959245D00B1F12E /* BreedPictureModel.swift in Sources */,
