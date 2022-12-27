@@ -46,12 +46,10 @@ final class FavoritePicturesFilterCoordinator: Coordinator {
 
 extension FavoritePicturesFilterCoordinator: FavoritePicturesFilterViewControllerDelegate {
     func viewControllerDidDismiss(_ viewController: FavoritePicturesFilterViewController) {
-        print(#function)
         end()
     }
 
     func viewController(_ viewController: FavoritePicturesFilterViewController, didTap doneButton: UIBarButtonItem, with items: [FavoritePicturesFilterItemViewModel]) {
-        print(#function)
         navigator.dismiss()
         delegate?.coordinator(self, didDismissWith: items)
         end()

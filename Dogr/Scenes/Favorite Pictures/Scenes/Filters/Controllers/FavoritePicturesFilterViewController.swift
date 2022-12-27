@@ -85,7 +85,6 @@ final class FavoritePicturesFilterViewController: ViewController {
 
 extension FavoritePicturesFilterViewController: FavoritePicturesFilterCollectionViewControllerDelegate {
     func collectionViewController(_ collectionViewController: FavoritePicturesFilterCollectionViewController, didSelectItemAt indexPath: IndexPath) {
-        print(#function)
         viewModel.itemTapped(at: indexPath)
         collectionViewController.update(items: viewModel.items)
     }

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import os.log
 import UIKit
 
 protocol BreedPicturesViewControllerDelegate: AnyObject {
@@ -55,7 +56,7 @@ final class BreedPicturesViewController: ViewController {
 
     private func setupContent() {
         viewModel.images.sink { error in
-            print(error)
+            os_log("TODO ⚠️")
         } receiveValue: { [weak self] imageList in
             self?.collectionViewController.update(with: imageList)
         }.store(in: &cancellables)
