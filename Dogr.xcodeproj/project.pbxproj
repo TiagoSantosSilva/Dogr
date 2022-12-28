@@ -10,7 +10,6 @@
 		9A72E8BE2957C1EF00A30BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72E8BD2957C1EF00A30BC0 /* AppDelegate.swift */; };
 		9A72E8C72957C1EF00A30BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A72E8C62957C1EF00A30BC0 /* Assets.xcassets */; };
 		9A72E8CA2957C1EF00A30BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A72E8C82957C1EF00A30BC0 /* LaunchScreen.storyboard */; };
-		9A72E8D52957C1EF00A30BC0 /* DogrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72E8D42957C1EF00A30BC0 /* DogrTests.swift */; };
 		9A72E8DF2957C1EF00A30BC0 /* DogrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72E8DE2957C1EF00A30BC0 /* DogrUITests.swift */; };
 		9A72E8E12957C1EF00A30BC0 /* DogrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72E8E02957C1EF00A30BC0 /* DogrUITestsLaunchTests.swift */; };
 		9A72E8F12957C81E00A30BC0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72E8F02957C81E00A30BC0 /* TabBarController.swift */; };
@@ -88,6 +87,14 @@
 		9ADA269C295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */; };
 		9ADA269F295B90F5002320D6 /* FavoritePicturesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA269E295B90F5002320D6 /* FavoritePicturesEmptyView.swift */; };
 		9ADA26A1295B910D002320D6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADA26A0295B910D002320D6 /* View.swift */; };
+		9AF9E9D2295B9B2E00408814 /* MockDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9D1295B9B2E00408814 /* MockDependencyContainer.swift */; };
+		9AF9E9D5295B9B7300408814 /* MockNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9D4295B9B7300408814 /* MockNetworkEngine.swift */; };
+		9AF9E9D9295B9CA700408814 /* MockFavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9D8295B9CA700408814 /* MockFavoritesRepository.swift */; };
+		9AF9E9DE295BB88500408814 /* BreedListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9DD295BB88500408814 /* BreedListCoordinatorTests.swift */; };
+		9AF9E9E0295BC5DE00408814 /* BreedListLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9DF295BC5DE00408814 /* BreedListLoaderTests.swift */; };
+		9AF9E9E4295BC6ED00408814 /* BreedListResultStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E3295BC6ED00408814 /* BreedListResultStub.swift */; };
+		9AF9E9E6295BCB1C00408814 /* BreedListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E5295BCB1C00408814 /* BreedListViewModelTests.swift */; };
+		9AF9E9EA295BCB4400408814 /* MockBreedListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +121,6 @@
 		9A72E8C92957C1EF00A30BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A72E8CB2957C1EF00A30BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A72E8D02957C1EF00A30BC0 /* DogrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A72E8D42957C1EF00A30BC0 /* DogrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogrTests.swift; sourceTree = "<group>"; };
 		9A72E8DA2957C1EF00A30BC0 /* DogrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72E8DE2957C1EF00A30BC0 /* DogrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogrUITests.swift; sourceTree = "<group>"; };
 		9A72E8E02957C1EF00A30BC0 /* DogrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogrUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -193,6 +199,14 @@
 		9ADA269B295B6757002320D6 /* FavoritePicturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9ADA269E295B90F5002320D6 /* FavoritePicturesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesEmptyView.swift; sourceTree = "<group>"; };
 		9ADA26A0295B910D002320D6 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		9AF9E9D1295B9B2E00408814 /* MockDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencyContainer.swift; sourceTree = "<group>"; };
+		9AF9E9D4295B9B7300408814 /* MockNetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkEngine.swift; sourceTree = "<group>"; };
+		9AF9E9D8295B9CA700408814 /* MockFavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesRepository.swift; sourceTree = "<group>"; };
+		9AF9E9DD295BB88500408814 /* BreedListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCoordinatorTests.swift; sourceTree = "<group>"; };
+		9AF9E9DF295BC5DE00408814 /* BreedListLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListLoaderTests.swift; sourceTree = "<group>"; };
+		9AF9E9E3295BC6ED00408814 /* BreedListResultStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListResultStub.swift; sourceTree = "<group>"; };
+		9AF9E9E5295BCB1C00408814 /* BreedListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModelTests.swift; sourceTree = "<group>"; };
+		9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBreedListLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +270,9 @@
 		9A72E8D32957C1EF00A30BC0 /* DogrTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A72E8D42957C1EF00A30BC0 /* DogrTests.swift */,
+				9AF9E9CF295B9B1B00408814 /* Mocks */,
+				9AF9E9E1295BC66600408814 /* Stubs */,
+				9AF9E9DA295BB85100408814 /* Tests */,
 			);
 			path = DogrTests;
 			sourceTree = "<group>";
@@ -599,6 +615,107 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9AF9E9CF295B9B1B00408814 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9D0295B9B2200408814 /* Application */,
+				9AF9E9D3295B9B6700408814 /* Network */,
+				9AF9E9D6295B9C9400408814 /* Persistence */,
+				9AF9E9E7295BCB3700408814 /* Scenes */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9AF9E9D0295B9B2200408814 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9D1295B9B2E00408814 /* MockDependencyContainer.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9AF9E9D3295B9B6700408814 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9D4295B9B7300408814 /* MockNetworkEngine.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9AF9E9D6295B9C9400408814 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9D7295B9CA000408814 /* Favorites */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9AF9E9D7295B9CA000408814 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9D8295B9CA700408814 /* MockFavoritesRepository.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		9AF9E9DA295BB85100408814 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9DB295BB85B00408814 /* Scenes */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9AF9E9DB295BB85B00408814 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9DC295BB86100408814 /* Breed List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9AF9E9DC295BB86100408814 /* Breed List */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9DD295BB88500408814 /* BreedListCoordinatorTests.swift */,
+				9AF9E9DF295BC5DE00408814 /* BreedListLoaderTests.swift */,
+				9AF9E9E5295BCB1C00408814 /* BreedListViewModelTests.swift */,
+			);
+			path = "Breed List";
+			sourceTree = "<group>";
+		};
+		9AF9E9E1295BC66600408814 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9E2295BC66B00408814 /* Breed List */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		9AF9E9E2295BC66B00408814 /* Breed List */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9E3295BC6ED00408814 /* BreedListResultStub.swift */,
+			);
+			path = "Breed List";
+			sourceTree = "<group>";
+		};
+		9AF9E9E7295BCB3700408814 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9E8295BCB3B00408814 /* Breed List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9AF9E9E8295BCB3B00408814 /* Breed List */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */,
+			);
+			path = "Breed List";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -812,7 +929,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A72E8D52957C1EF00A30BC0 /* DogrTests.swift in Sources */,
+				9AF9E9D5295B9B7300408814 /* MockNetworkEngine.swift in Sources */,
+				9AF9E9E4295BC6ED00408814 /* BreedListResultStub.swift in Sources */,
+				9AF9E9E0295BC5DE00408814 /* BreedListLoaderTests.swift in Sources */,
+				9AF9E9EA295BCB4400408814 /* MockBreedListLoader.swift in Sources */,
+				9AF9E9D9295B9CA700408814 /* MockFavoritesRepository.swift in Sources */,
+				9AF9E9D2295B9B2E00408814 /* MockDependencyContainer.swift in Sources */,
+				9AF9E9DE295BB88500408814 /* BreedListCoordinatorTests.swift in Sources */,
+				9AF9E9E6295BCB1C00408814 /* BreedListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
