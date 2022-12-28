@@ -95,6 +95,8 @@
 		9AF9E9E4295BC6ED00408814 /* BreedListResultStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E3295BC6ED00408814 /* BreedListResultStub.swift */; };
 		9AF9E9E6295BCB1C00408814 /* BreedListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E5295BCB1C00408814 /* BreedListViewModelTests.swift */; };
 		9AF9E9EA295BCB4400408814 /* MockBreedListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */; };
+		9AF9E9ED295BD1B400408814 /* FavoritesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9EC295BD1B400408814 /* FavoritesRepositoryTests.swift */; };
+		9AF9E9F0295BD2C800408814 /* BreedPictureModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9EF295BD2C800408814 /* BreedPictureModel+Stub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,8 @@
 		9AF9E9E3295BC6ED00408814 /* BreedListResultStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListResultStub.swift; sourceTree = "<group>"; };
 		9AF9E9E5295BCB1C00408814 /* BreedListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModelTests.swift; sourceTree = "<group>"; };
 		9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBreedListLoader.swift; sourceTree = "<group>"; };
+		9AF9E9EC295BD1B400408814 /* FavoritesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryTests.swift; sourceTree = "<group>"; };
+		9AF9E9EF295BD2C800408814 /* BreedPictureModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreedPictureModel+Stub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -661,6 +665,7 @@
 		9AF9E9DA295BB85100408814 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				9AF9E9EB295BD1A600408814 /* Persistence */,
 				9AF9E9DB295BB85B00408814 /* Scenes */,
 			);
 			path = Tests;
@@ -687,6 +692,7 @@
 		9AF9E9E1295BC66600408814 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				9AF9E9EE295BD2BC00408814 /* Breed Pictures */,
 				9AF9E9E2295BC66B00408814 /* Breed List */,
 			);
 			path = Stubs;
@@ -714,6 +720,22 @@
 				9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */,
 			);
 			path = "Breed List";
+			sourceTree = "<group>";
+		};
+		9AF9E9EB295BD1A600408814 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9EC295BD1B400408814 /* FavoritesRepositoryTests.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9AF9E9EE295BD2BC00408814 /* Breed Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9E9EF295BD2C800408814 /* BreedPictureModel+Stub.swift */,
+			);
+			path = "Breed Pictures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -930,11 +952,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF9E9D5295B9B7300408814 /* MockNetworkEngine.swift in Sources */,
+				9AF9E9ED295BD1B400408814 /* FavoritesRepositoryTests.swift in Sources */,
 				9AF9E9E4295BC6ED00408814 /* BreedListResultStub.swift in Sources */,
 				9AF9E9E0295BC5DE00408814 /* BreedListLoaderTests.swift in Sources */,
 				9AF9E9EA295BCB4400408814 /* MockBreedListLoader.swift in Sources */,
 				9AF9E9D9295B9CA700408814 /* MockFavoritesRepository.swift in Sources */,
 				9AF9E9D2295B9B2E00408814 /* MockDependencyContainer.swift in Sources */,
+				9AF9E9F0295BD2C800408814 /* BreedPictureModel+Stub.swift in Sources */,
 				9AF9E9DE295BB88500408814 /* BreedListCoordinatorTests.swift in Sources */,
 				9AF9E9E6295BCB1C00408814 /* BreedListViewModelTests.swift in Sources */,
 			);

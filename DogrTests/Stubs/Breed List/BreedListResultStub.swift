@@ -27,7 +27,9 @@ enum BreedListResultStub {
                                                "Finnish",
                                                "Chihuahua",
                                                "Segugio"]
+}
 
+extension BreedListResult {
     static let empty: BreedListResult = .init(message: [:])
-    static let value: BreedListResult = .init(message: Dictionary(uniqueKeysWithValues: unorderedBreedList.map { ($0, []) } ))
+    static let value: BreedListResult = .init(message: Dictionary(uniqueKeysWithValues: BreedListResultStub.unorderedBreedList.map { ($0, []) } ))
 }

@@ -36,7 +36,7 @@ final class BreedListViewModelTests: XCTestCase {
 
         let expectation = expectation(description: "View Model received successful response.")
         loader.loadBreedsHandler = {
-            BreedListResultStub.value
+            BreedListResult.value
         }
 
         // When
@@ -50,7 +50,7 @@ final class BreedListViewModelTests: XCTestCase {
 
         // Then
 
-        wait(for: [expectation], timeout: 1)
+        waitForExpectations(timeout: 1)
     }
 
     func testLoadBreedsCompletesWithErrorForErrorThrownOnLoader() {
@@ -70,7 +70,7 @@ final class BreedListViewModelTests: XCTestCase {
 
         // Then
 
-        wait(for: [expectation], timeout: 1)
+        waitForExpectations(timeout: 1)
     }
 
     func testLoadBreedsCompletedWithSuccessCompletesWithOrderedBreedList() {
@@ -78,7 +78,7 @@ final class BreedListViewModelTests: XCTestCase {
 
         let expectation = expectation(description: "View Model received successful response.")
         loader.loadBreedsHandler = {
-            BreedListResultStub.value
+            BreedListResult.value
         }
 
         // When
@@ -98,6 +98,6 @@ final class BreedListViewModelTests: XCTestCase {
 
         // Then
 
-        wait(for: [expectation], timeout: 1)
+        waitForExpectations(timeout: 1)
     }
 }

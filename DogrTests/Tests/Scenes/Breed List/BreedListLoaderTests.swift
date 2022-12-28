@@ -38,7 +38,7 @@ final class BreedListLoaderTests: XCTestCase {
         // Given
 
         networkEngine.endpointRequestHandler = { _ in
-            BreedListResultStub.value
+            BreedListResult.value
         }
 
         // When
@@ -47,14 +47,14 @@ final class BreedListLoaderTests: XCTestCase {
 
         // Then
 
-        XCTAssertEqual(result, BreedListResultStub.value)
+        XCTAssertEqual(result, .value)
     }
 
     func testLoadBreedsLoadsEmptyResultForEmptyDataLoad() async {
         // Given
 
         networkEngine.endpointRequestHandler = { _ in
-            BreedListResultStub.empty
+            BreedListResult.empty
         }
 
         // When
@@ -63,7 +63,7 @@ final class BreedListLoaderTests: XCTestCase {
 
         // Then
 
-        XCTAssertEqual(result, BreedListResultStub.empty)
+        XCTAssertEqual(result, .empty)
     }
 }
 

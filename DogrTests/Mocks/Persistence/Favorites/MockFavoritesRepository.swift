@@ -13,7 +13,7 @@ final class MockFavoritesRepository: FavoritesRepositoriable {
 
     // MARK: Properties
 
-    var pictures: CurrentValueSubject<[Dogr.BreedPictureGroupModel], Never> = .init([])
+    var breedPictures: CurrentValueSubject<[Dogr.BreedPictureGroupModel], Never> = .init([])
 
     var addHandler: ((BreedPictureModel) -> Void)?
     var removeHandler: ((String, String) -> Void)?

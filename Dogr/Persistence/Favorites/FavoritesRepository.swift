@@ -8,9 +8,9 @@
 import Combine
 
 protocol FavoritesRepositoriable: AnyObject {
-    var pictures: CurrentValueSubject<[BreedPictureGroupModel], Never> { get }
+    var breedPictures: CurrentValueSubject<[BreedPictureGroupModel], Never> { get }
 
-    func add(_ breed: BreedPictureModel)
+    func add(_ picture: BreedPictureModel)
     func remove(url: String, for breed: String)
     func isImageFavorite(url: String, for breed: String) -> Bool
 }
@@ -21,34 +21,34 @@ final class FavoritesRepository: FavoritesRepositoriable {
 
     // MARK: Properties
 
-    private(set) var pictures: FavoritePicturesValueSubject = .init([])
+    private(set) var breedPictures: FavoritePicturesValueSubject = .init([])
 
     // MARK: Functions
 
     func add(_ breed: BreedPictureModel) {
-        guard let group = pictures.group(for: breed.name) else {
-            pictures.add(BreedPictureGroupModel(breed: breed.name, pictures: [breed]))
-            pictures.sortByName()
+        guard let group = breedPictures.group(for: breed.name) else {
+            breedPictures.add(BreedPictureGroupModel(breed: breed.name, pictures: [breed]))
+            breedPictures.sortByName()
             return
         }
 
         group.pictures.append(breed)
-        pictures.send()
+        breedPictures.send()
     }
 
     func remove(url: String, for breed: String) {
-        guard let groupForBreed = pictures.group(for: breed) else { return }
+        guard let groupForBreed = breedPictures.group(for: breed) else { return }
 
         groupForBreed.remove(url: url)
         guard groupForBreed.pictures.isEmpty else {
-            pictures.send()
+            breedPictures.send()
             return
         }
-        pictures.remove(groupForBreed)
+        breedPictures.remove(groupForBreed)
     }
 
     func isImageFavorite(url: String, for breed: String) -> Bool {
-        guard let groupForBreed = pictures.group(for: breed) else { return false }
+        guard let groupForBreed = breedPictures.group(for: breed) else { return false }
 
         return groupForBreed.contains(url: url)
     }

@@ -21,9 +21,9 @@ final class FavoritePicturesViewModel: FavoritePicturesViewModelable {
     // MARK: Properties
 
     var filterModeledBreeds: [FavoritePicturesFilterItemViewModel] {
-        favoriteRepository.pictures.value.map { .init(breed: $0.breed, name: $0.name, isSelected: $0.breed == selectedBreed) }
+        favoriteRepository.breedPictures.value.map { .init(breed: $0.breed, name: $0.name, isSelected: $0.breed == selectedBreed) }
     }
-    lazy var groups: CurrentValueSubject<[BreedPictureGroupModel], Never> = .init(favoriteRepository.pictures.value)
+    lazy var groups: CurrentValueSubject<[BreedPictureGroupModel], Never> = .init(favoriteRepository.breedPictures.value)
     var isApplyingFilter: Bool { selectedBreed != nil }
 
     private let favoriteRepository: FavoritesRepositoriable
@@ -35,7 +35,7 @@ final class FavoritePicturesViewModel: FavoritePicturesViewModelable {
     init(dependencies: DependencyContainable) {
         self.favoriteRepository = dependencies.favoritesRepository
 
-        favoriteRepository.pictures.sink { [weak self] _ in
+        favoriteRepository.breedPictures.sink { [weak self] _ in
             self?.updateGroups()
         }.store(in: &cancellables)
     }
@@ -49,8 +49,8 @@ final class FavoritePicturesViewModel: FavoritePicturesViewModelable {
 
     private func updateGroups() {
         let groupsToSend: [BreedPictureGroupModel] = {
-            guard let selectedBreed = selectedBreed else { return favoriteRepository.pictures.value }
-            return favoriteRepository.pictures.value.filter { $0.breed == selectedBreed }
+            guard let selectedBreed = selectedBreed else { return favoriteRepository.breedPictures.value }
+            return favoriteRepository.breedPictures.value.filter { $0.breed == selectedBreed }
         }()
         groups.send(groupsToSend)
     }
