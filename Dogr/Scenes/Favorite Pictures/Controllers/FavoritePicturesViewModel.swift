@@ -8,7 +8,12 @@
 import Combine
 import Foundation
 
+protocol FavoritePicturesViewModelDelegate: AnyObject {
+    func viewModelDidRemoveFilter(_ viewModel: FavoritePicturesViewModel)
+}
+
 protocol FavoritePicturesViewModelable: AnyObject {
+    var delegate: FavoritePicturesViewModelDelegate? { get set }
     var filterModeledBreeds: [FavoritePicturesFilterItemViewModel] { get }
     var groups: CurrentValueSubject<[BreedPictureGroupModel], Never> { get }
     var isApplyingFilter: Bool { get }
@@ -19,6 +24,8 @@ protocol FavoritePicturesViewModelable: AnyObject {
 final class FavoritePicturesViewModel: FavoritePicturesViewModelable {
 
     // MARK: Properties
+
+    weak var delegate: FavoritePicturesViewModelDelegate?
 
     var filterModeledBreeds: [FavoritePicturesFilterItemViewModel] {
         favoriteRepository.breedPictures.value.map { .init(breed: $0.breed, name: $0.name, isSelected: $0.breed == selectedBreed) }
@@ -50,7 +57,14 @@ final class FavoritePicturesViewModel: FavoritePicturesViewModelable {
     private func updateGroups() {
         let groupsToSend: [BreedPictureGroupModel] = {
             guard let selectedBreed = selectedBreed else { return favoriteRepository.breedPictures.value }
-            return favoriteRepository.breedPictures.value.filter { $0.breed == selectedBreed }
+            let filteredBreedPictures = favoriteRepository.breedPictures.value.filter { $0.breed == selectedBreed }
+
+            if filteredBreedPictures.isEmpty {
+                self.selectedBreed = nil
+                delegate?.viewModelDidRemoveFilter(self)
+            }
+
+            return !filteredBreedPictures.isEmpty ? filteredBreedPictures : favoriteRepository.breedPictures.value
         }()
         groups.send(groupsToSend)
     }

@@ -31,6 +31,7 @@ final class FavoritePicturesViewController: ViewController {
         self.collectionViewController = FavoritePicturesCollectionViewController()
         self.viewModel = viewModel
         super.init()
+        self.viewModel.delegate = self
 
         setupNavigationBar()
     }
@@ -63,17 +64,21 @@ final class FavoritePicturesViewController: ViewController {
     }
 
     private func setupContent() {
-        viewModel.groups.sink { [weak self] in
-            if $0.isEmpty {
+        viewModel.groups.sink { [weak self] groups in
+            if groups.isEmpty {
                 guard self?.emptyView.superview == nil else { return }
                 self?.collectionViewController.remove()
                 self?.setupEmptyView()
             } else {
+                defer {
+                    Task { @MainActor in
+                        self?.collectionViewController.update(with: groups)
+                    }
+                }
                 guard self?.collectionViewController.parent == nil else { return }
                 self?.emptyView.removeFromSuperview()
                 self?.setupCollectionView()
             }
-            self?.collectionViewController.update(with: $0)
         }.store(in: &cancellables)
     }
 
@@ -105,6 +110,14 @@ final class FavoritePicturesViewController: ViewController {
     @objc
     private func filterButtonTapped(_ sender: UIBarButtonItem) {
         delegate?.viewController(self, didTap: sender, with: viewModel.filterModeledBreeds)
+    }
+}
+
+// MARK: - FavoritePicturesViewModelDelegate
+
+extension FavoritePicturesViewController: FavoritePicturesViewModelDelegate {
+    func viewModelDidRemoveFilter(_ viewModel: FavoritePicturesViewModel) {
+        setupRightBarButtonItem(isFilterButtonFilled: false)
     }
 }
 
