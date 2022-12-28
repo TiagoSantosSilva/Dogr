@@ -62,7 +62,7 @@ These tests cover the following classes:
 - `BreedListCoordinator`
 - `BreedListLoader`
 - `BreedListViewModel`
-- `FavoritesRepository
+- `FavoritesRepository`
 
 Once again, these are not the only tests that would have been done in a real-life app but due to time constraints I deem that's enough. 
 
