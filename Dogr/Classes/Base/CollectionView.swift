@@ -24,7 +24,7 @@ class CollectionView: UICollectionView {
     // MARK: - Setups
 
     private func setup() {
-        backgroundColor = .systemGray6
+        backgroundColor = Colors.background
         keyboardDismissMode = .onDrag
     }
 }

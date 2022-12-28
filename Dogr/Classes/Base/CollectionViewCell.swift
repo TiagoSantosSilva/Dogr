@@ -24,6 +24,6 @@ class CollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
 
     private func setupStyle() {
-        backgroundColor = .systemGray5
+        backgroundColor = Colors.cell
     }
 }

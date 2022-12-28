@@ -97,6 +97,7 @@
 		9AF9E9EA295BCB4400408814 /* MockBreedListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */; };
 		9AF9E9ED295BD1B400408814 /* FavoritesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9EC295BD1B400408814 /* FavoritesRepositoryTests.swift */; };
 		9AF9E9F0295BD2C800408814 /* BreedPictureModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9EF295BD2C800408814 /* BreedPictureModel+Stub.swift */; };
+		9AF9E9F2295BE08B00408814 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9E9F1295BE08B00408814 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		9AF9E9E9295BCB4400408814 /* MockBreedListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBreedListLoader.swift; sourceTree = "<group>"; };
 		9AF9E9EC295BD1B400408814 /* FavoritesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryTests.swift; sourceTree = "<group>"; };
 		9AF9E9EF295BD2C800408814 /* BreedPictureModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreedPictureModel+Stub.swift"; sourceTree = "<group>"; };
+		9AF9E9F1295BE08B00408814 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +402,7 @@
 			children = (
 				9A72E91F2957D2A800A30BC0 /* Localizable.swift */,
 				9AD6CC7C2957FB430091BBC9 /* StringError.swift */,
+				9AF9E9F1295BE08B00408814 /* Colors.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -913,6 +916,7 @@
 				9A72E9112957CFA600A30BC0 /* BreedListViewController.swift in Sources */,
 				9AD6CC5B2957E1BA0091BBC9 /* BreedEndpoint.swift in Sources */,
 				9ADA26A1295B910D002320D6 /* View.swift in Sources */,
+				9AF9E9F2295BE08B00408814 /* Colors.swift in Sources */,
 				9A72E90B2957CF8700A30BC0 /* BreedListCoordinator.swift in Sources */,
 				9AD6CC512957E0550091BBC9 /* HTTPMethod.swift in Sources */,
 				9ADA2691295B61E3002320D6 /* FavoritePicturesFilterCollectionViewController.swift in Sources */,

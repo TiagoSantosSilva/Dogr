@@ -23,10 +23,10 @@ final class TabBarController: UITabBarController {
     // MARK: Setups
 
     private func setup() {
-        tabBar.tintColor = .systemBlue
-        tabBar.barTintColor = .systemGray5
-        tabBar.unselectedItemTintColor = .secondaryLabel
+        tabBar.tintColor = Colors.tint
+        tabBar.barTintColor = Colors.TabBar.barTint
+        tabBar.unselectedItemTintColor = Colors.TabBar.unselectedItem
         tabBar.isTranslucent = false
-        tabBar.backgroundColor = .systemGray5
+        tabBar.backgroundColor = Colors.TabBar.background
     }
 }

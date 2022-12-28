@@ -29,8 +29,8 @@ final class FavoritePicturesCollectionViewCell: CollectionViewListCell {
 
     private func setup() {
         var configuration = defaultContentConfiguration()
-        configuration.textProperties.color = .label
+        configuration.textProperties.color = Colors.label
         contentConfiguration = configuration
-        tintColor = .systemBlue
+        tintColor = Colors.tint
     }
 }

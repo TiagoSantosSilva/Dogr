@@ -44,7 +44,7 @@ final class BreedListCell: CollectionViewCell {
     private func setupStyle() {
         round()
 
-        nameLabel.textColor = .label
+        nameLabel.textColor = Colors.label
         nameLabel.textAlignment = .left
         nameLabel.font = Style.NameLabel.font
     }

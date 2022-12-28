@@ -30,6 +30,6 @@ final class NavigationBar: UINavigationBar {
         self.standardAppearance = appearance
         self.scrollEdgeAppearance = appearance
 
-        tintColor = .systemBlue
+        tintColor = Colors.tint
     }
 }

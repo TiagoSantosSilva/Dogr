@@ -14,10 +14,10 @@ final class FavoritePicturesEmptyView: View {
     private let stackView: UIStackView = .init()
     private let titleLabel: FavoritePicturesEmptyViewLabel = .init(font: Style.TitleLabel.font,
                                                                    text: Localizable.FavoritePictures.EmptyBar.title,
-                                                                   textColor: .label)
+                                                                   textColor: Colors.label)
     private let messageLabel: FavoritePicturesEmptyViewLabel = .init(font: Style.MessageLabel.font,
                                                                      text: Localizable.FavoritePictures.EmptyBar.message,
-                                                                     textColor: .secondaryLabel)
+                                                                     textColor: Colors.label)
 
     // MARK: Initialization
 

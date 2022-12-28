@@ -25,7 +25,7 @@ class CollectionViewListCell: UICollectionViewListCell {
 
     private func setupStyle() {
         var backgroundConfig = UIBackgroundConfiguration.listGroupedCell()
-        backgroundConfig.backgroundColor = .systemGray5
+        backgroundConfig.backgroundColor = Colors.cell
         backgroundConfiguration = backgroundConfig
     }
 }

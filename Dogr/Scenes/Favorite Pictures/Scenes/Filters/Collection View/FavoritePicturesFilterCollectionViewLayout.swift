@@ -13,7 +13,7 @@ final class FavoritePicturesFilterCollectionViewLayout: UICollectionViewComposit
         var layout = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         layout.headerMode = .none
         layout.footerMode = .none
-        layout.backgroundColor = .systemGray6
+        layout.backgroundColor = Colors.background
         return .list(using: layout)
     }
 }

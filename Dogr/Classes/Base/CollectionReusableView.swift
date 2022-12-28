@@ -24,6 +24,6 @@ class CollectionReusableView: UICollectionReusableView {
     // MARK: - Functions
 
     private func stylize() {
-        backgroundColor = .systemGray6
+        backgroundColor = Colors.background
     }
 }
